@@ -1,0 +1,18 @@
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/.env
+frontend/.env.local
+
+# Backend
+backend/vendor
+backend/node_modules
+backend/.env
+backend/public/storage
+backend/storage/*.key
+
+# Mac
+.DS_Store
+
+# Logs
+*.log

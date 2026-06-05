@@ -1,6 +1,6 @@
 "use client";
 
-import { API_URL, authHeaders } from "@/src/lib/api";
+import { API_URL, STORAGE_URL, authHeaders } from "@/src/lib/api";
 import type { Competition, Registration } from "@/src/types/api";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -137,7 +137,7 @@ export default function CompetitionsPage() {
                         {competition.banner ? (
 
                             <img
-                                src={`http://127.0.0.1:8000/storage/${competition.banner}`}
+                                src={`${STORAGE_URL}/${competition.banner}`}
                                 alt={competition.title}
                                 className="w-full h-56 object-cover"
                             />

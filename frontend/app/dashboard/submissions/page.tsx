@@ -1,6 +1,6 @@
 "use client";
 
-import { API_URL, authHeaders } from "@/src/lib/api";
+import { API_URL, STORAGE_URL, authHeaders } from "@/src/lib/api";
 import type { Submission } from "@/src/types/api";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -148,7 +148,7 @@ export default function SubmissionsPage() {
                         {item.thumbnail ? (
 
                             <img
-                                src={`http://127.0.0.1:8000/storage/${item.thumbnail}`}
+                                src={`${STORAGE_URL}/${item.thumbnail}`}
                                 alt={item.title || "Submission"}
                                 className="w-full h-56 object-cover"
                             />

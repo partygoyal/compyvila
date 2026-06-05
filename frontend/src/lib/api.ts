@@ -1,12 +1,12 @@
-const API_URL =
+export const API_URL =
     process.env.NEXT_PUBLIC_API_URL ||
-    "http://127.0.0.1:8000/api";
+    "https://api.compyvila.com/api";
 
-const STORAGE_URL =
-    API_URL.replace(/\/api\/?$/, "/storage");
+export const STORAGE_URL =
+    process.env.NEXT_PUBLIC_STORAGE_URL ||
+    "https://api.compyvila.com/storage";
 
 export function authHeaders() {
-
     const token =
         localStorage.getItem("token") ||
         sessionStorage.getItem("token");
@@ -16,5 +16,3 @@ export function authHeaders() {
         Accept: "application/json",
     };
 }
-
-export { API_URL, STORAGE_URL };

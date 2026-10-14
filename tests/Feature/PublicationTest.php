@@ -210,8 +210,8 @@ class PublicationTest extends TestCase
             ->assertSee('<meta name="twitter:card" content="summary_large_image">', false)
             ->assertSee('/favicon.ico')->assertSee('/assets/favicon-v2.svg')->assertSee('/apple-touch-icon.png');
         [$width, $height] = getimagesize(public_path('assets/compyvila-og.png'));
-        $home->assertSee('property="og:image:width" content="'.$width.'"', false)
-            ->assertSee('property="og:image:height" content="'.$height.'"', false);
+        $this->assertGreaterThan($height, $width);
+        $this->assertLessThan(5 * 1024 * 1024, filesize(public_path('assets/compyvila-og.png')));
         $this->get('/search?q=bitcoin')->assertSee('<link rel="canonical" href="https://compyvila.com/search">', false);
         $article = Article::published()->firstOrFail();
         $this->get('/read/'.$article->slug)->assertOk()

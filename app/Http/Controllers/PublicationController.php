@@ -125,6 +125,10 @@ class PublicationController extends Controller
         foreach (Article::published()->get(['slug', 'updated_at']) as $article) {
             $urls[] = ['path' => '/read/'.$article->slug, 'modified' => \Illuminate\Support\Carbon::parse($article->updated_at)->toAtomString()];
         }
+        $urls[] = ['path' => '/projects', 'modified' => null];
+        foreach (\App\Models\Project::published()->get(['slug', 'updated_at']) as $project) {
+            $urls[] = ['path' => '/projects/'.$project->slug, 'modified' => $project->updated_at->toAtomString()];
+        }
 
         return response()->view('sitemap', ['urls' => $urls])->header('Content-Type', 'application/xml; charset=utf-8');
     }

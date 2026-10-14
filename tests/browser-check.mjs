@@ -121,6 +121,33 @@ try {
       await writeFile(`storage/qa-guide-${width}.png`, Buffer.from(shot.data, 'base64'));
     }
   }
+  if (process.argv.includes('--projects')) {
+    for (const width of [1440, 1024, 768, 390, 320]) {
+      await call('Emulation.setDeviceMetricsOverride', { width, height: 1100, deviceScaleFactor: 1, mobile: width < 900 });
+      await navigate('/projects');
+      assert(await evaluate(`document.querySelector('.project-filters') !== null`), 'Project directory filters render');
+      assert(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), `Project directory fits ${width}px viewport`);
+      if (width === 1440 || width === 390) {
+        const shot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+        await writeFile(`storage/qa-projects-${width}.png`, Buffer.from(shot.data, 'base64'));
+      }
+      const profileUrl = await evaluate(`document.querySelector('.project-card h3 a')?.getAttribute('href')`);
+      if (profileUrl) {
+        await navigate(new URL(profileUrl, origin).pathname);
+        assert(await evaluate(`document.querySelector('.project-facts') !== null && document.querySelector('.sources a') !== null`), 'Project milestone facts and primary sources render');
+        assert(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), `Project profile fits ${width}px viewport`);
+        assert(await evaluate(`JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent)['@graph'][0]['@type'] === 'WebPage'`), 'Project profile schema parses');
+        if (width === 390) {
+          const shot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+          await writeFile('storage/qa-project-profile-mobile.png', Buffer.from(shot.data, 'base64'));
+        }
+      } else assert(await evaluate(`document.querySelector('.project-empty') !== null`), 'Empty project directory provides a useful next step');
+    }
+    await navigate('/projects?year=2025');
+    assert(await evaluate(`document.querySelector('[name="year"]').value === '2025' && Array.from(document.querySelectorAll('.project-card .story-meta')).every(e=>e.textContent.includes('2025'))`), 'Launch year filter applies');
+    await navigate('/projects?q=does-not-match-any-project-fixture');
+    assert(await evaluate(`document.querySelector('.project-empty') !== null`), 'Unmatched project search has an empty state');
+  }
   if (process.argv.includes('--admin')) {
     const credentials = await readFile('storage/admin-access.txt', 'utf8');
     const email = credentials.match(/Admin created: (\S+)/)?.[1];
@@ -131,7 +158,7 @@ try {
     await evaluate(`document.querySelector('[name="email"]').value = ${JSON.stringify(email)}; document.querySelector('[name="password"]').value = ${JSON.stringify(password)}; document.querySelector('form').requestSubmit();`);
     await loggedIn;
     assert(await evaluate(`document.querySelector('h1')?.textContent.includes('Welcome to the desk.')`), 'Existing admin login works after migration');
-    for (const url of ['/admin?tab=articles', '/admin?tab=market', '/admin?tab=events', '/admin?tab=settings', '/admin/article', '/admin/article?id=1', '/admin/event', '/admin/snapshot']) {
+    for (const url of ['/admin?tab=articles', '/admin?tab=market', '/admin?tab=projects', '/admin?tab=events', '/admin?tab=settings', '/admin/article', '/admin/article?id=1', '/admin/project', '/admin/event', '/admin/snapshot']) {
       await navigate(url);
       assert(await evaluate(`document.querySelector('.admin-tabs') !== null && document.documentElement.scrollWidth <= innerWidth`), `Admin page renders and fits mobile: ${url}`);
     }

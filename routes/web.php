@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicationController::class, 'home'])->name('home');
 Route::get('/read/{slug}', [PublicationController::class, 'article'])->name('articles.show');
 Route::get('/calendar', [PublicationController::class, 'calendar'])->name('calendar');
+Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects/{slug}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
 Route::get('/media-kit/download', [PublicationController::class, 'downloadKit'])->name('media.download');
 Route::get('/sitemap.xml', [PublicationController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [PublicationController::class, 'robots'])->name('robots');
@@ -25,6 +27,8 @@ Route::prefix('admin')->name('admin.')->middleware('editorial')->group(function 
     Route::post('/article', [ArticleController::class, 'store'])->name('articles.store');
     Route::get('/event', [EventController::class, 'edit'])->name('events.edit');
     Route::post('/event', [EventController::class, 'store'])->name('events.store');
+    Route::get('/project', [\App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('projects.edit');
+    Route::post('/project', [\App\Http\Controllers\Admin\ProjectController::class, 'store'])->name('projects.store');
     Route::get('/snapshot', [SnapshotController::class, 'edit'])->name('snapshots.edit');
     Route::post('/snapshot', [SnapshotController::class, 'store'])->name('snapshots.store');
     Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');

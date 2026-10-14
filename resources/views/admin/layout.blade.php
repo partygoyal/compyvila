@@ -4,7 +4,7 @@
 @include('components.messages')
 
 @if($logged)
-<nav class="admin-tabs" aria-label="Editorial sections">@foreach(['overview'=>'Overview','articles'=>'Articles','market'=>'Market snapshots','events'=>'Calendar','subscribers'=>'Subscribers','enquiries'=>'Enquiries','settings'=>'Settings'] as $key=>$label)<a class="{{ $tab===$key && $path==='/admin' ? 'active' : '' }}" href="/admin?tab={{ $key }}">{{ $label }}</a>@endforeach</nav>
+<nav class="admin-tabs" aria-label="Editorial sections">@foreach(['overview'=>'Overview','articles'=>'Articles','projects'=>'Projects','market'=>'Market snapshots','events'=>'Calendar','subscribers'=>'Subscribers','enquiries'=>'Enquiries','settings'=>'Settings'] as $key=>$label)<a class="{{ $tab===$key && $path==='/admin' ? 'active' : '' }}" href="/admin?tab={{ $key }}">{{ $label }}</a>@endforeach</nav>
 @endif
 @yield('content')
 </main><div class="toast" role="status" aria-live="polite"></div></body></html>

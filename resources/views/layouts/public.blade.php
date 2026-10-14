@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ $title }} — Compyvila</title><meta name="description" content="{{ $description }}">
 @include('components.social-meta')
+@include('components.article-schema')
 @include('components.favicons')
 <link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script></head>
 <body><a href="#main" class="skip">Skip to content</a>
 <div class="topbar"><div class="container topbar-inner"><span><i class="status-dot"></i> INDEPENDENT THINKING. CLEARER CRYPTO.</span><span>{{ date('D, d M Y') }} <b>•</b> <a href="/media-kit">Partner with us ↗</a></span></div></div>
 <header class="header"><div class="container header-inner"><a class="brand" href="/" aria-label="Compyvila home"><span class="brand-mark">c<span>↗</span></span>compyvila<span class="brand-period">.</span></a><button class="icon-button mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav id="navigation" aria-label="Main navigation">@foreach(['Home'=>'/','News'=>'/news','Analysis'=>'/analysis','Bitcoin'=>'/bitcoin','Altcoins'=>'/altcoins','Learn'=>'/learn','Calendar'=>'/calendar'] as $label=>$href)<a href="{{ $href }}" class="{{ $path===$href ? 'active' : '' }}">{{ $label }}</a>@endforeach</nav><div class="header-actions"><a class="icon-button search-icon" href="/search" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></a><a class="button small" href="/#newsletter">The daily brief <span>↗</span></a></div></div></header>
-@if($demo)<div class="demo-note"><div class="container">PREVIEW EDITION <span>Sample editorial content and illustrative prices. Market snapshots are manually maintained.</span></div></div>@endif
+@if($demo)<div class="demo-note"><div class="container">MARKET DATA PREVIEW <span>Illustrative prices. Market snapshots are manually maintained and are not live quotes.</span></div></div>@endif
 @include('components.messages')
 <main id="main" class="container">
 

@@ -8,6 +8,7 @@ Route::get('/read/{slug}', [PublicationController::class, 'article'])->name('art
 Route::get('/calendar', [PublicationController::class, 'calendar'])->name('calendar');
 Route::get('/media-kit/download', [PublicationController::class, 'downloadKit'])->name('media.download');
 Route::get('/sitemap.xml', [PublicationController::class, 'sitemap'])->name('sitemap');
+Route::get('/robots.txt', [PublicationController::class, 'robots'])->name('robots');
 Route::get('/{section}', [PublicationController::class, 'listing'])
     ->whereIn('section', ['news', 'analysis', 'bitcoin', 'ethereum', 'altcoins', 'learn', 'search', 'watchlist'])->name('section');
 Route::get('/{page}', [PublicationController::class, 'page'])

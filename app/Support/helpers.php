@@ -26,12 +26,8 @@ function human_date(string $date): string
 
 function paragraphs(string $body): HtmlString
 {
-    $html = '';
-    foreach (preg_split('/\R\s*\R/', trim($body)) as $paragraph) {
-        $html .= str_starts_with($paragraph, '## ')
-            ? '<h2>'.e(substr($paragraph, 3)).'</h2>'
-            : '<p>'.nl2br(e($paragraph)).'</p>';
-    }
-
-    return new HtmlString($html);
+    return new HtmlString(Illuminate\Support\Str::markdown($body, [
+        'html_input' => 'escape',
+        'allow_unsafe_links' => false,
+    ]));
 }

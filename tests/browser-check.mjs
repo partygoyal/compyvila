@@ -110,6 +110,17 @@ try {
       await writeFile('storage/qa-media-kit.png', Buffer.from(shot.data, 'base64'));
     }
   }
+  if (process.argv.includes('--guides')) {
+    for (const width of [1440, 390]) {
+      await call('Emulation.setDeviceMetricsOverride', { width, height: 1100, deviceScaleFactor: 1, mobile: width === 390 });
+      await navigate('/read/market-cap-vs-fdv');
+      assert(await evaluate(`document.querySelectorAll('.article-body table').length === 1`), 'Guide comparison table renders');
+      assert(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), `Guide fits ${width}px viewport`);
+      assert(await evaluate(`JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent)['@graph'][0]['@type'] === 'Article'`), 'Article structured data parses in browser');
+      const shot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+      await writeFile(`storage/qa-guide-${width}.png`, Buffer.from(shot.data, 'base64'));
+    }
+  }
   if (process.argv.includes('--admin')) {
     const credentials = await readFile('storage/admin-access.txt', 'utf8');
     const email = credentials.match(/Admin created: (\S+)/)?.[1];

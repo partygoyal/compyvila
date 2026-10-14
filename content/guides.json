@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "bitcoin-halving-explained",
+    "title": "Bitcoin halving explained: what changes and what does not",
+    "coin": "Bitcoin",
+    "category": "Learn",
+    "excerpt": "Understand Bitcoin\u2019s halving schedule, the difference between subsidy and fees, and why reduced issuance does not guarantee a higher price.",
+    "sources": [
+      "https://developer.bitcoin.org/reference/block_chain.html",
+      "https://developer.bitcoin.org/devguide/block_chain.html"
+    ]
+  },
+  {
+    "slug": "seed-phrase-vs-private-key",
+    "title": "Seed phrase vs private key: the difference and how to protect both",
+    "coin": "Bitcoin",
+    "category": "Learn",
+    "excerpt": "A seed phrase can recover many wallet keys; a private key signs for a specific key. Learn what each controls and how to avoid recovery scams.",
+    "sources": [
+      "https://bips.dev/39/",
+      "https://bips.dev/32/"
+    ]
+  },
+  {
+    "slug": "market-cap-vs-fdv",
+    "title": "Market cap vs FDV: formulas, examples, and token unlock risks",
+    "coin": "Altcoins",
+    "category": "Analysis",
+    "excerpt": "Market cap uses circulating supply; fully diluted valuation uses a broader supply figure. Compare the formulas and see what neither number tells you.",
+    "sources": [
+      "https://www.coingecko.com/en/methodology",
+      "https://www.coingecko.com/en/glossary/fully-diluted-valuation",
+      "https://www.coingecko.com/learn/what-is-market-cap-in-crypto"
+    ]
+  },
+  {
+    "slug": "crypto-liquidity-vs-volume",
+    "title": "Crypto liquidity vs volume: how to read trading conditions",
+    "coin": "Altcoins",
+    "category": "Learn",
+    "excerpt": "Trading volume records activity; liquidity describes execution capacity. Learn about spread, depth, slippage, and why high volume can mislead.",
+    "sources": [
+      "https://support.kraken.com/in/articles/sliced-market-orders-explained",
+      "https://support.kraken.com/articles/201648183-market-price-protection?mode=consumerapp",
+      "https://docs.uniswap.org/concepts/protocol/concentrated-liquidity"
+    ]
+  },
+  {
+    "slug": "ethereum-gas-fees-explained",
+    "title": "Ethereum gas fees explained: gas limits, gwei, and actual cost",
+    "coin": "Ethereum",
+    "category": "Learn",
+    "excerpt": "Calculate an Ethereum execution fee, distinguish gas used from the gas limit, and understand base fees, priority fees, and failed transactions.",
+    "sources": [
+      "https://ethereum.org/developers/docs/gas/",
+      "https://eips.ethereum.org/EIPS/eip-1559",
+      "https://ethereum.org/developers/docs/transactions",
+      "https://ethereum.org/layer-2/"
+    ]
+  },
+  {
+    "slug": "stablecoin-depeg-explained",
+    "title": "Stablecoin depeg explained: causes, redemption, and warning signs",
+    "coin": "Altcoins",
+    "category": "Analysis",
+    "excerpt": "A stablecoin depeg is a market-price deviation from its target. Learn why reserves, redemption access, liquidity, and token identity matter.",
+    "sources": [
+      "https://www.circle.com/usdc",
+      "https://help.circle.com/support/en/usdc-eurc-redemption-structure?id=kb_article_view&sysparm_article=KB0010644&sysparm_language=en",
+      "https://www.bis.org/fsi/publ/insights57.pdf",
+      "https://www.circle.com/transparency"
+    ]
+  }
+]

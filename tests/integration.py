@@ -64,7 +64,7 @@ with tempfile.TemporaryDirectory(prefix='compyvila-test-') as temp:
         else:
             raise AssertionError('Server did not start')
         check(status == 200 and 'Crypto, with' in home, 'Homepage renders')
-        check('PREVIEW EDITION' in home and 'ILLUSTRATIVE' in home, 'Samples labelled')
+        check('MARKET DATA PREVIEW' in home and 'ILLUSTRATIVE' in home, 'Samples labelled')
         check('Authors' not in home and 'href="/about"' not in home, 'No author or About links')
         db = sqlite3.connect(database)
         check(db.execute('SELECT COUNT(*) FROM articles').fetchone()[0] == 10, 'Installer is repeatable')

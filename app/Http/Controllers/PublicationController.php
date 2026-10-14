@@ -120,8 +120,18 @@ class PublicationController extends Controller
 
     public function sitemap()
     {
-        $urls = array_merge(array_keys(self::TITLES), Article::published()->pluck('slug')->map(fn ($slug) => '/read/'.$slug)->all());
+        $urls = collect(array_keys(self::TITLES))->reject(fn ($path) => in_array($path, ['/search', '/watchlist']))
+            ->map(fn ($path) => ['path' => $path, 'modified' => null])->values()->all();
+        foreach (Article::published()->get(['slug', 'updated_at']) as $article) {
+            $urls[] = ['path' => '/read/'.$article->slug, 'modified' => \Illuminate\Support\Carbon::parse($article->updated_at)->toAtomString()];
+        }
 
         return response()->view('sitemap', ['urls' => $urls])->header('Content-Type', 'application/xml; charset=utf-8');
+    }
+
+    public function robots()
+    {
+        return response("User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /search\nDisallow: /watchlist\nSitemap: ".rtrim(config('app.url'), '/')."/sitemap.xml\n")
+            ->header('Content-Type', 'text/plain; charset=utf-8');
     }
 }

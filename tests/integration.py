@@ -48,7 +48,7 @@ with tempfile.TemporaryDirectory(prefix='compyvila-test-') as temp:
             result = opener.open(origin + path, data=data, timeout=5)
         except urllib.error.HTTPError as result_error:
             result = result_error
-        return result.status, result.read().decode(), result.headers
+        return result.status, result.read().decode(errors='replace'), result.headers
 
     def token(body):
         return re.search(r'name="_token" value="([^"]+)"', body).group(1)

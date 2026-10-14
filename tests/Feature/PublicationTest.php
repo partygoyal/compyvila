@@ -200,4 +200,28 @@ class PublicationTest extends TestCase
         $this->get('/search?q=wallet')->assertOk()->assertSee('Your first wallet');
         $this->get('/search?q=not-a-real-topic')->assertOk()->assertSee('No stories found.');
     }
+
+    public function test_social_previews_and_favicons_use_public_absolute_image_metadata(): void
+    {
+        config(['app.url' => 'https://compyvila.com']);
+        $home = $this->get('/')->assertOk();
+        $home->assertSee('<meta property="og:image" content="https://compyvila.com/assets/compyvila-og.png">', false)
+            ->assertSee('<meta property="og:url" content="https://compyvila.com/">', false)
+            ->assertSee('<meta name="twitter:card" content="summary_large_image">', false)
+            ->assertSee('/favicon.ico')->assertSee('/assets/favicon-v2.svg')->assertSee('/apple-touch-icon.png');
+        [$width, $height] = getimagesize(public_path('assets/compyvila-og.png'));
+        $home->assertSee('property="og:image:width" content="'.$width.'"', false)
+            ->assertSee('property="og:image:height" content="'.$height.'"', false);
+        $this->get('/search?q=bitcoin')->assertSee('<link rel="canonical" href="https://compyvila.com/search">', false);
+        $article = Article::published()->firstOrFail();
+        $this->get('/read/'.$article->slug)->assertOk()
+            ->assertSee('<meta property="og:type" content="article">', false)
+            ->assertSee('property="article:published_time"', false)
+            ->assertSee($article->title.' — Compyvila');
+        $this->assertSame([180, 180], array_slice(getimagesize(public_path('apple-touch-icon.png')), 0, 2));
+        $manifest = json_decode(file_get_contents(public_path('site.webmanifest')), true, flags: JSON_THROW_ON_ERROR);
+        foreach ($manifest['icons'] as $icon) {
+            $this->assertFileExists(public_path(ltrim($icon['src'], '/')));
+        }
+    }
 }

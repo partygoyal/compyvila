@@ -4,7 +4,7 @@ A Laravel 13 crypto editorial publication with Blade views, Eloquent models, MyS
 
 ## Local setup
 
-Requires PHP 8.3+, Composer, MySQL/MariaDB, and PHP extensions required by Laravel, including PDO MySQL, fileinfo, and image support. The example environment targets the local XAMPP `compyvila` database.
+Requires PHP 8.3+, Composer, MySQL/MariaDB, and PHP extensions required by Laravel, including PDO MySQL, fileinfo, and image support. The example environment targets the local XAMPP `compyvila` database. Composer resolves dependencies against PHP 8.3.35 to match the production domain.
 
 ```sh
 composer install
@@ -67,7 +67,7 @@ The media kit does not invent audience numbers, performance figures, or rates. V
 
 Laravel handles hashed passwords, encrypted sessions, session regeneration/expiry, CSRF tokens, input validation, login throttling, and prepared database queries. Protected routes use editorial middleware and an `admin` Auth guard. Forms retain validation errors without flashing passwords. Response middleware sets CSP and other security headers; admin responses are private and excluded from indexing.
 
-Deploy to a PHP/Laravel-capable host, set its document root to **`public/`**, use HTTPS, set `APP_ENV=production`, `APP_DEBUG=false`, and the real `APP_URL`. Configure a restricted database user. Keep `.env`, application source, private `storage/`, and `vendor/` outside the document root. Allow writes to `storage/`, `bootstrap/cache/`, and `public/uploads/`; prevent the web server from executing uploaded files. Back up the database and uploads. Run `composer install --no-dev --optimize-autoloader`, `php artisan migrate --force`, and Laravel's configuration/route/view cache commands during a reviewed deployment. No hosted deployment has been performed in this task.
+Deploy to a PHP/Laravel-capable host, set its document root to **`public/`**, use HTTPS, set `APP_ENV=production`, `APP_DEBUG=false`, and the real `APP_URL`. Configure a restricted database user. Keep `.env`, application source, private `storage/`, and `vendor/` outside the document root. Allow writes to `storage/`, `bootstrap/cache/`, and `public/uploads/`; prevent the web server from executing uploaded files. Back up the database and uploads. Run `composer install --no-dev --optimize-autoloader`, `php artisan migrate --force`, and Laravel's configuration/route/view cache commands during a reviewed deployment. On Hostinger, keep release source outside `public_html`, use a private shared environment and persistent storage, and point the webroot at the selected release’s `public/` directory. Back up the database and previous webroot before switching releases.
 
 ## Verification
 

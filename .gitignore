@@ -1,18 +1,16 @@
-# Frontend
-frontend/node_modules
-frontend/.next
-frontend/.env
-frontend/.env.local
-
-# Backend
-backend/vendor
-backend/node_modules
-backend/.env
-backend/public/storage
-backend/storage/*.key
-
-# Mac
+/.env
+/.phpunit.cache/
+/.phpunit.result.cache
+/vendor/
+/node_modules/
+/storage/*
+!/storage/app/
+!/storage/framework/
+!/storage/logs/
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/public/uploads/*
+!/public/uploads/.gitkeep
+/public/storage
+/database/*.sqlite*
 .DS_Store
-
-# Logs
-*.log

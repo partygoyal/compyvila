@@ -1,0 +1,1 @@
+<div class="section-head"><div><span class="eyebrow">{{ $kicker }}</span><h2>{{ $title }}</h2></div>@if($url)<a class="text-link" href="{{ $url }}">{{ $label }} <span>↗</span></a>@endif</div>

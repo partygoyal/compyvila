@@ -42,8 +42,8 @@ class AiSeriesTest extends TestCase
             $this->assertLessThan(1024*1024,filesize($image));
             $html = $this->get('/read/'.$article['slug'])->assertOk()
                 ->assertSee('article-banner')->assertSee('Frequently asked questions')
-                ->assertSee('<meta property="og:image" content="https://compyvila.com'.$article['image'].'">', false)
-                ->assertSee('<meta property="og:image:type" content="image/webp">', false)->getContent();
+                ->assertSee('<meta property="og:image" content="'.\App\Support\SocialPreview::image($article['image'])['url'].'">', false)
+                ->assertSee('<meta property="og:image:type" content="image/jpeg">', false)->getContent();
             preg_match('~<script type="application/ld\+json">(.*?)</script>~s',$html,$schema);
             $data = json_decode($schema[1],true,flags:JSON_THROW_ON_ERROR);
             $this->assertSame('https://compyvila.com'.$article['image'],$data['@graph'][0]['image']);

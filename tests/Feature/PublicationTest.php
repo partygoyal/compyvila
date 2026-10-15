@@ -205,7 +205,7 @@ class PublicationTest extends TestCase
     {
         config(['app.url' => 'https://compyvila.com']);
         $home = $this->get('/')->assertOk();
-        $home->assertSee('<meta property="og:image" content="https://compyvila.com/assets/compyvila-og.png">', false)
+        $home->assertSee('<meta property="og:image" content="https://compyvila.com/assets/social/compyvila-v3.jpg">', false)
             ->assertSee('<meta property="og:url" content="https://compyvila.com/">', false)
             ->assertSee('<meta name="twitter:card" content="summary_large_image">', false)
             ->assertSee('/favicon.ico')->assertSee('/assets/favicon-v2.svg')->assertSee('/apple-touch-icon.png');

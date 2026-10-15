@@ -124,7 +124,7 @@ try {
         await navigate('/read/'+slug);
         assert(await evaluate(`document.querySelector('.article-banner img')?.naturalWidth > 1000`), `Creative banner loads for ${slug}`);
         assert(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), `${slug} fits ${width}px`);
-        assert(await evaluate(`document.querySelector('meta[property="og:image"]').content.endsWith('/assets/articles/${slug}.webp')`), 'Social preview uses the article banner');
+        assert(await evaluate(`document.querySelector('meta[property="og:image"]').content.includes('/assets/social/article-') && document.querySelector('meta[property="og:image"]').content.endsWith('.jpg')`), 'Social preview uses the article banner');
         if (slug === 'ai-agents-crypto-wallets') {
           const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});
           await writeFile(`storage/qa-ai-article-${width}.png`,Buffer.from(shot.data,'base64'));

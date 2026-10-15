@@ -2,10 +2,9 @@
     $origin = rtrim(config('app.url'), '/');
     $canonical = $origin.($path === '/' ? '/' : $path);
     $hasArticleImage = $article && $article['image'];
-    $shareImage = $hasArticleImage ? $origin.$article['image'] : $origin.'/assets/compyvila-og.png';
-    $imageType = $hasArticleImage ? match(strtolower(pathinfo($article['image'], PATHINFO_EXTENSION))) {
-        'webp' => 'image/webp', 'jpg', 'jpeg' => 'image/jpeg', default => 'image/png',
-    } : 'image/png';
+    $preview = \App\Support\SocialPreview::image($hasArticleImage ? $article['image'] : null);
+    $shareImage = $preview['url'];
+    $imageType = $preview['type'];
     $shareTitle = $title.' — Compyvila';
     $imageAlt = $hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.';
 @endphp
@@ -19,6 +18,8 @@
 <meta property="og:image" content="{{ $shareImage }}">
 <meta property="og:image:secure_url" content="{{ $shareImage }}">
 <meta property="og:image:type" content="{{ $imageType }}">
+<meta property="og:image:width" content="{{ $preview['width'] }}">
+<meta property="og:image:height" content="{{ $preview['height'] }}">
 <meta property="og:image:alt" content="{{ $imageAlt }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $shareTitle }}">

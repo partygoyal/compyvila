@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "esperto-technologies-saas-development-india",
+    "title": "Esperto Technologies: SaaS development in India, from MVP to scale",
+    "excerpt": "A company profile exploring Esperto Technologies’ SaaS offering, product delivery approach, and related AI automation services.",
+    "category": "Learn",
+    "coin": "Technology",
+    "image": "/assets/articles/esperto-technologies-saas-development-india.jpg",
+    "sources": [
+      "https://www.espertotech.in/services/saas-development",
+      "https://www.espertotech.in/locations/uttarakhand",
+      "https://www.espertotech.in/services/ai-automation"
+    ],
+    "published_at": "2026-10-15 15:30:00",
+    "cover_kicker": "TECHNOLOGY / COMPANY PROFILE",
+    "cover_lines": [
+      "Esperto Technologies",
+      "SaaS, built to grow."
+    ],
+    "cover_footer": "SAAS DEVELOPMENT / INDIA",
+    "cover_icon": "SaaS",
+    "cover_color": [
+      63,
+      111,
+      236
+    ]
+  }
+]

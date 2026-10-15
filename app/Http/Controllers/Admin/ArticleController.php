@@ -28,7 +28,7 @@ class ArticleController extends Controller
             'excerpt' => ['required', 'string', 'min:10', 'max:2000'],
             'body' => ['required', 'string', 'min:30', 'max:60000'],
             'category' => ['required', Rule::in(['News', 'Analysis', 'Learn'])],
-            'coin' => ['required', Rule::in(['Bitcoin', 'Ethereum', 'Altcoins'])],
+            'coin' => ['required', Rule::in(['Bitcoin', 'Ethereum', 'Altcoins', 'Technology'])],
             'sources' => ['required_if:status,published', 'nullable', 'string', function ($attribute, $value, $fail) use ($request) {
                 if ($request->input('status') === 'published' && ! trim($value ?? '')) {
                     $fail('Published stories need at least one source link.');

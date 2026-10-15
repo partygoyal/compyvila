@@ -39,7 +39,7 @@ class PublicationController extends Controller
         return $this->render('home', [
             'heroArticles' => Article::published()->latest('published_at')->orderByDesc('id')->take(10)->get(),
             'feature' => Article::published()->orderByDesc('featured')->latest('published_at')->first(),
-            'snapshots' => Snapshot::orderBy('id')->get(),
+            'snapshots' => app(\App\Services\MarketPrices::class)->quotes(),
             'dispatches' => Article::published()->latest('published_at')->skip(1)->take(4)->get(),
             'analyses' => Article::published()->where('category', 'Analysis')->latest('published_at')->take(3)->get(),
             'events' => Event::where('event_at', '>=', today()->format('Y-m-d H:i:s'))->orderBy('event_at')->take(3)->get(),
@@ -74,7 +74,7 @@ class PublicationController extends Controller
             'items' => $paginator->items(), 'total' => $paginator->total(),
             'page' => $paginator->currentPage(), 'perPage' => $paginator->perPage(),
             'savedArticles' => $path === '/watchlist' ? Article::published()->latest('published_at')->get() : collect(),
-            'coin' => $coin, 'snap' => Snapshot::where('symbol', $coin)->first(),
+            'coin' => $coin, 'snap' => in_array($path, ['/bitcoin', '/ethereum']) ? app(\App\Services\MarketPrices::class)->quotes()->firstWhere('symbol', $coin) : null,
         ]);
     }
 
@@ -110,7 +110,7 @@ class PublicationController extends Controller
             'media-kit' => 'media', 'market-notes' => 'market', default => 'policies',
         };
 
-        return $this->render($template, ['snapshots' => $page === 'market-notes' ? Snapshot::orderBy('id')->get() : collect()]);
+        return $this->render($template, ['snapshots' => $page === 'market-notes' ? app(\App\Services\MarketPrices::class)->quotes() : collect()]);
     }
 
     public function downloadKit()

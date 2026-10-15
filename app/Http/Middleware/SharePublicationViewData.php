@@ -18,6 +18,7 @@ class SharePublicationViewData
                 'description' => 'Independent thinking. A clearer view of crypto.',
                 'article' => null,
                 'demo' => setting('demo', '1') === '1',
+                'marketLive' => (bool) config('market.key'),
                 'logged' => Auth::guard('admin')->check(),
                 'tab' => $request->query('tab', 'overview'),
             ]);

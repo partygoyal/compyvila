@@ -4,6 +4,7 @@
 @include('components.article-schema')
 @include('components.project-schema')
 @include('components.favicons')
+@include('components.analytics')
 <link rel="stylesheet" href="/assets/style.css">@if(request()->routeIs('projects.*'))<link rel="stylesheet" href="/assets/projects.css?v=2">@endif<script src="/assets/app.js" defer></script></head>
 <body><a href="#main" class="skip">Skip to content</a>
 <div class="topbar"><div class="container topbar-inner"><span><i class="status-dot"></i> INDEPENDENT THINKING. CLEARER CRYPTO.</span><span>{{ date('D, d M Y') }} <b>•</b> <a href="/media-kit">Partner with us ↗</a></span></div></div>

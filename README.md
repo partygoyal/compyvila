@@ -1,6 +1,6 @@
 # Compyvila
 
-A Laravel 13 crypto editorial publication with Blade views, Eloquent models, MySQL, and plain CSS/JavaScript. Market information is manually maintained: no external market APIs, widgets, fonts, or analytics. There are no author profiles or About page.
+A Laravel 13 crypto editorial publication with Blade views, Eloquent models, MySQL, and plain CSS/JavaScript. Market information is manually maintained: no external market APIs, widgets, or fonts. Public production pages include the configured Google Analytics tag. There are no author profiles or About page.
 
 ## Local setup
 
@@ -93,3 +93,9 @@ Manage listings at `/admin?tab=projects` or add one at `/admin/project`. A launc
 The projects migration adds its own table without changing existing publication data. No example projects are seeded in production. The directory starts empty so editors can publish researched listings. No external API or automated project feed is used.
 
 `php artisan test` covers project permissions, validation, publishing, year/category/stage/search filters, pagination, escaping, profile schema, and sitemap visibility. Add `--projects` to the standalone browser check for responsive directory/profile checks at widths from 320 to 1440 pixels. Use an isolated preview database for fictional QA listings.
+
+## Google Analytics
+
+GA4 measurement ID `G-0E51GY5RYX` is configured in `config/analytics.php`, overridable with `GA_MEASUREMENT_ID`. Tracking defaults to production only; `GA_ENABLED=false` disables it. Rebuild Laravel's config cache after changing these values. Admin pages and the downloaded media kit exclude the tag. Each tagged response uses a fresh CSP nonce; Google Analytics network endpoints are allowed only for public responses with analytics enabled. Google Signals and ad personalization signals are disabled in this site's configuration. The privacy notice describes analytics when enabled.
+
+CSP references: https://developers.google.com/tag-platform/security/guides/csp (Google Analytics without Ads features).

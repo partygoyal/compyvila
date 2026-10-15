@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "unichain",
+    "name": "Unichain",
+    "tagline": "An Ethereum Layer 2 designed for DeFi applications and cross-chain liquidity.",
+    "category": "Layer 2",
+    "network": "Ethereum / OP Stack",
+    "symbol": "",
+    "launch_year": 2025,
+    "launch_date": "2025-02-11",
+    "milestone": "Mainnet launch",
+    "stage": "Live",
+    "website": "https://www.unichain.org/",
+    "sources": [
+      "https://blog.uniswap.org/unichain-mainnet-is-here",
+      "https://developers.uniswap.org/docs/unichain/technical-information/network-information"
+    ]
+  },
+  {
+    "slug": "berachain",
+    "name": "Berachain",
+    "tagline": "An EVM-compatible Layer 1 built around Proof of Liquidity and application incentives.",
+    "category": "Layer 1",
+    "network": "Berachain",
+    "symbol": "BERA",
+    "launch_year": 2025,
+    "launch_date": "2025-02-06",
+    "milestone": "Mainnet launch",
+    "stage": "Live",
+    "website": "https://www.berachain.com/",
+    "sources": [
+      "https://docs.berachain.com/general/introduction/what-is-berachain",
+      "https://docs.berachain.com/general/tokens/bera",
+      "https://assets-cms.kraken.com/files/51n36hrp/facade/0add1afb90e8ef5bd7bcde967601a8004db73a47.pdf"
+    ]
+  },
+  {
+    "slug": "walrus",
+    "name": "Walrus",
+    "tagline": "Decentralized blob storage using Sui for coordination and a dedicated storage-node network.",
+    "category": "Infrastructure",
+    "network": "Sui / Walrus",
+    "symbol": "WAL",
+    "launch_year": 2025,
+    "launch_date": "2025-03-27",
+    "milestone": "Mainnet launch",
+    "stage": "Live",
+    "website": "https://walrus.xyz/",
+    "sources": [
+      "https://docs.wal.app/blog/06_mainnet",
+      "https://docs.wal.app/docs/system-overview/available-networks"
+    ]
+  },
+  {
+    "slug": "monad",
+    "name": "Monad",
+    "tagline": "An EVM-compatible Layer 1 using parallel execution and a purpose-built client architecture.",
+    "category": "Layer 1",
+    "network": "Monad",
+    "symbol": "MON",
+    "launch_year": 2025,
+    "launch_date": "2025-11-24",
+    "milestone": "Mainnet launch",
+    "stage": "Live",
+    "website": "https://monad.xyz/",
+    "sources": [
+      "https://docs.monad.xyz/",
+      "https://docs.monad.xyz/developer-essentials/network-information",
+      "https://blog.uniswap.org/monad-mainnet-is-now-live-on-uniswap"
+    ]
+  },
+  {
+    "slug": "initia",
+    "name": "Initia",
+    "tagline": "An infrastructure stack combining a Layer 1 with application-specific Interwoven Rollups.",
+    "category": "Infrastructure",
+    "network": "Initia / Interwoven Rollups",
+    "symbol": "INIT",
+    "launch_year": 2025,
+    "launch_date": null,
+    "milestone": "Mainnet launch",
+    "stage": "Live",
+    "website": "https://initia.xyz/",
+    "sources": [
+      "https://forum.initia.xyz/t/mib-1-add-init-price-feed-to-connect/81",
+      "https://docs.initia.xyz/home/general/welcome"
+    ]
+  },
+  {
+    "slug": "uniswap-v4",
+    "name": "Uniswap v4",
+    "tagline": "A decentralized exchange protocol release introducing customizable pool hooks and shared pool management.",
+    "category": "DeFi",
+    "network": "Ethereum / multiple EVM networks",
+    "symbol": "",
+    "launch_year": 2025,
+    "launch_date": "2025-01-31",
+    "milestone": "Product launch",
+    "stage": "Live",
+    "website": "https://uniswap.org/",
+    "sources": [
+      "https://blog.uniswap.org/uniswap-v4-is-here",
+      "https://developers.uniswap.org/docs/protocols/v4/overview"
+    ]
+  }
+]

@@ -2,8 +2,51 @@
 use App\Models\Admin;
 use Illuminate\Support\Facades\Artisan;
 use App\Models\Article;
+use App\Models\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+
+Artisan::command('compyvila:publish-projects {--publish : Insert missing listings; otherwise validate only}', function () {
+    $projects = json_decode(file_get_contents(base_path('content/projects-2025.json')), true, flags: JSON_THROW_ON_ERROR);
+    $records = [];
+    foreach ($projects as $project) {
+        Validator::make($project, [
+            'slug' => ['required', 'string', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/', 'max:190'],
+            'name' => ['required', 'string', 'min:2', 'max:120'],
+            'tagline' => ['required', 'string', 'min:10', 'max:300'],
+            'category' => ['required', Illuminate\Validation\Rule::in(Project::CATEGORIES)],
+            'stage' => ['required', Illuminate\Validation\Rule::in(Project::STAGES)],
+            'milestone' => ['required', Illuminate\Validation\Rule::in(Project::MILESTONES)],
+            'network' => ['required', 'string', 'max:120'],
+            'symbol' => ['nullable', 'string', 'max:20'],
+            'launch_year' => ['required', 'integer', 'in:2025'],
+            'launch_date' => ['nullable', 'date_format:Y-m-d', 'after_or_equal:2025-01-01', 'before_or_equal:2025-12-31'],
+            'website' => ['required', 'url:http,https', 'max:500'],
+            'sources' => ['required', 'array', 'min:1'],
+            'sources.*' => ['required', 'url:http,https'],
+        ])->validate();
+        $body = file_get_contents(base_path('content/projects/'.$project['slug'].'.md'));
+        Validator::make(['description'=>$body], ['description'=>['required', 'string', 'min:30', 'max:30000']])->validate();
+        $records[] = array_merge($project, ['description'=>$body, 'sources'=>implode("\n", $project['sources'])]);
+    }
+    if (count(array_unique(array_column($records, 'slug'))) !== count($records)) {
+        $this->error('Duplicate project slugs. No listings published.');
+        return 1;
+    }
+    if (! $this->option('publish')) {
+        $this->info(count($records).' projects validated. Use --publish to insert missing listings.');
+        return 0;
+    }
+    DB::transaction(function () use ($records) {
+        foreach ($records as $record) {
+            $project = Project::firstOrCreate(['slug'=>$record['slug']], array_merge($record, [
+                'status'=>'published', 'published_at'=>now(),
+            ]));
+            $this->line(($project->wasRecentlyCreated ? 'Published: ' : 'Preserved existing: ').$project->slug);
+        }
+    });
+    return 0;
+})->purpose('Publish the researched 2025 Crypto Radar collection while preserving existing editorial records');
 
 Artisan::command('compyvila:publish-guides {--publish : Insert missing guides; otherwise validate only}', function () {
     $guides = json_decode(file_get_contents(base_path('content/guides.json')), true, flags: JSON_THROW_ON_ERROR);

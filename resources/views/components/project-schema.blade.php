@@ -7,7 +7,7 @@
         '@graph' => [
             [
                 '@type' => 'WebPage', '@id' => $url, 'url' => $url,
-                'name' => $project->name.' — project overview', 'description' => $project->tagline,
+                'name' => $project->name.' — Crypto Radar', 'description' => $project->tagline,
                 'datePublished' => $project->published_at->toAtomString(), 'dateModified' => $project->updated_at->toAtomString(),
                 'inLanguage' => 'en', 'about' => ['@type'=>'Thing', 'name'=>$project->name, 'url'=>$project->website],
                 'publisher' => ['@type'=>'Organization', 'name'=>'Compyvila', 'url'=>$origin],
@@ -16,7 +16,7 @@
             [
                 '@type'=>'BreadcrumbList', 'itemListElement'=>[
                     ['@type'=>'ListItem', 'position'=>1, 'name'=>'Home', 'item'=>$origin.'/'],
-                    ['@type'=>'ListItem', 'position'=>2, 'name'=>'Projects', 'item'=>$origin.'/projects'],
+                    ['@type'=>'ListItem', 'position'=>2, 'name'=>'Crypto Radar', 'item'=>$origin.'/projects'],
                     ['@type'=>'ListItem', 'position'=>3, 'name'=>$project->name, 'item'=>$url],
                 ],
             ],

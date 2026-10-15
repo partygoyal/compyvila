@@ -84,9 +84,9 @@ HTTP integration checks use another temporary SQLite database, isolated session/
 
 The optional standalone Chrome check requires the local preview to be running. `CHROME_BIN` overrides the executable path. It tests desktop/tablet/mobile widths, navigation, and saved stories, and stores screenshots under ignored `storage/`. With `--admin`, it also uses the ignored local bootstrap login to verify the migrated admin interface without printing credentials.
 
-## Project directory
+## Crypto Radar
 
-`/projects` lists published crypto projects with launch milestones in 2025 and 2026. Visitors can combine launch year, category, current stage, and name/ticker/network search; results are paginated. Each profile shows its named milestone, optional exact date, project overview, official website, primary source links, and last review date. Project profiles are included in the sitemap with modification dates.
+**Crypto Radar** (`/projects`) lists published crypto projects with launch milestones in 2025 and 2026. Visitors can combine launch year, category, current stage, and name/ticker/network search; results are paginated. Each profile shows its named milestone, optional exact date, project overview, official website, primary source links, and last review date. Project profiles are included in the sitemap with modification dates.
 
 Manage listings at `/admin?tab=projects` or add one at `/admin/project`. A launch year describes the selected announcement, testnet, mainnet, token, or product milestone; it is separate from the current project stage and the date added to Compyvila. The optional exact milestone date must match that year. Published listings require at least one valid source URL; drafts remain private. Saving a project updates its review date. Records can be edited, unpublished, and deleted through the protected editorial desk.
 

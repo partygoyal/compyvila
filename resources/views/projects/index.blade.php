@@ -2,11 +2,11 @@
 @section('content')
 <div class="project-directory">
 <section class="project-intro">
-    <div><span class="eyebrow"><i></i> THE COMPYVILA PROJECT DIRECTORY</span><h1>The next wave<br>of <em>crypto.</em></h1><p>Explore new projects through their launch milestones, what they’re building, and the sources behind their claims.</p></div>
+    <div><span class="eyebrow"><i></i> THE COMPYVILA CRYPTO RADAR</span><h1>Crypto <em>Radar.</em></h1><p>Explore new projects through their launch milestones, what they’re building, and the sources behind their claims.</p></div>
     <div class="project-edition"><span>THE LAUNCH INDEX</span><strong>2025<span>—</span>2026</strong><small>Networks · Protocols · Products</small><a href="/contact">Suggest a project <span>↗</span></a></div>
 </section>
 <section id="project-listings" class="project-listings" aria-labelledby="projects-heading">
-    <div class="project-list-heading"><div><span class="eyebrow">DISCOVER / RESEARCH / EXPLORE</span><h2 id="projects-heading">The project index<span>.</span></h2></div><div class="year-tabs" aria-label="Filter launch year">
+    <div class="project-list-heading"><div><span class="eyebrow">DISCOVER / RESEARCH / EXPLORE</span><h2 id="projects-heading">On the radar<span>.</span></h2></div><div class="year-tabs" aria-label="Filter launch year">
         <a href="{{ route('projects.index', array_filter(array_merge($filters, ['year'=>null]))) }}" @class(['selected'=>empty($filters['year'])]) @if(empty($filters['year'])) aria-current="true" @endif>All years <b>{{ $yearCounts->sum() }}</b></a>
         @foreach(\App\Models\Project::YEARS as $year)<a href="{{ route('projects.index', array_filter(array_merge($filters, ['year'=>$year]))) }}" @class(['selected'=>(string)($filters['year'] ?? '')===(string)$year]) @if((string)($filters['year'] ?? '')===(string)$year) aria-current="true" @endif>{{ $year }} <b>{{ $yearCounts[$year] ?? 0 }}</b></a>@endforeach
     </div></div>

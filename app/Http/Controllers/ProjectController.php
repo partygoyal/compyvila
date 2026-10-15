@@ -29,8 +29,8 @@ class ProjectController extends Controller
         }
 
         return view('projects.index', array_merge($this->shared(), [
-            'title' => 'New crypto projects, in perspective.',
-            'description' => 'Explore crypto projects with launch milestones in 2025 and 2026. Filter by year, category, and stage, and follow original project sources.',
+            'title' => 'Crypto Radar',
+            'description' => 'Discover crypto projects on Compyvila’s Crypto Radar with launch milestones in 2025 and 2026. Filter by year, category, and stage, and follow original project sources.',
             'filters' => $filters, 'q' => $q,
             'projects' => $query->orderByDesc('launch_year')->latest('published_at')->orderByDesc('id')->paginate(12)->withQueryString(),
             'yearCounts' => Project::published()->selectRaw('launch_year, COUNT(*) AS total')->groupBy('launch_year')->pluck('total', 'launch_year'),
@@ -42,7 +42,7 @@ class ProjectController extends Controller
         $project = Project::published()->where('slug', $slug)->firstOrFail();
 
         return view('projects.show', array_merge($this->shared(), [
-            'path' => '/projects/'.$project->slug, 'title' => $project->name.' — project overview',
+            'path' => '/projects/'.$project->slug, 'title' => $project->name.' — Crypto Radar',
             'description' => $project->tagline, 'project' => $project,
             'related' => Project::published()->where('id', '<>', $project->id)->where('category', $project->category)
                 ->latest('published_at')->orderByDesc('id')->take(3)->get(),

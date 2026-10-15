@@ -6,6 +6,45 @@ use App\Models\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
+Artisan::command('compyvila:publish-ai-series {--publish : Insert missing articles; otherwise validate only}', function () {
+    $articles = json_decode(file_get_contents(base_path('content/ai-series.json')), true, flags: JSON_THROW_ON_ERROR);
+    $records = [];
+    foreach ($articles as $article) {
+        Validator::make($article, [
+            'slug'=>['required','string','regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/','max:190'],
+            'title'=>['required','string','max:250'], 'excerpt'=>['required','string','max:1000'],
+            'category'=>['required','in:News,Analysis,Learn'], 'coin'=>['required','in:Bitcoin,Ethereum,Altcoins'],
+            'sources'=>['required','array','min:1'], 'sources.*'=>['required','url:http,https'],
+            'image'=>['required','string'],
+        ])->validate();
+        if ($article['image'] !== '/assets/articles/'.$article['slug'].'.webp' || ! is_file(public_path(ltrim($article['image'], '/')))) {
+            $this->error('Missing or invalid banner for '.$article['slug'].'. No articles published.');
+            return 1;
+        }
+        $body = file_get_contents(base_path('content/ai-series/'.$article['slug'].'.md'));
+        Validator::make(['body'=>$body], ['body'=>['required','string','min:30','max:60000']])->validate();
+        $records[] = array_merge($article, ['body'=>$body, 'sources'=>implode("\n", $article['sources'])]);
+    }
+    if (count(array_unique(array_column($records, 'slug'))) !== count($records)) {
+        $this->error('Duplicate article slugs. No articles published.');
+        return 1;
+    }
+    if (! $this->option('publish')) {
+        $this->info(count($records).' AI articles and banners validated. Use --publish to insert missing articles.');
+        return 0;
+    }
+    DB::transaction(function () use ($records) {
+        foreach ($records as $record) {
+            $article = Article::firstOrCreate(['slug'=>$record['slug']], array_merge($record, [
+                'status'=>'published', 'featured'=>false,
+                'published_at'=>now()->format('Y-m-d H:i:s'), 'updated_at'=>now()->format('Y-m-d H:i:s'),
+            ]));
+            $this->line(($article->wasRecentlyCreated ? 'Published: ' : 'Preserved existing: ').$article->slug);
+        }
+    });
+    return 0;
+})->purpose('Publish the sourced AI and crypto series with its creative banners, preserving existing editorial changes');
+
 Artisan::command('compyvila:publish-projects {--publish : Insert missing listings; otherwise validate only}', function () {
     $projects = json_decode(file_get_contents(base_path('content/projects-2025.json')), true, flags: JSON_THROW_ON_ERROR);
     $records = [];

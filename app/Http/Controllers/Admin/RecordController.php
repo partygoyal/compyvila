@@ -15,7 +15,7 @@ class RecordController extends Controller
         $record = $models[$type]::findOrFail($id);
         $image = $type === 'articles' ? $record->image : null;
         $record->delete();
-        if ($image) {
+        if ($image && str_starts_with($image, '/uploads/')) {
             Storage::disk('editorial')->delete(basename($image));
         }
 

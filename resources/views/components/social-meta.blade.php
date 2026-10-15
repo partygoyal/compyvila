@@ -1,9 +1,13 @@
 @php
     $origin = rtrim(config('app.url'), '/');
     $canonical = $origin.($path === '/' ? '/' : $path);
-    $shareImage = $origin.'/assets/compyvila-og.png';
+    $hasArticleImage = $article && $article['image'];
+    $shareImage = $hasArticleImage ? $origin.$article['image'] : $origin.'/assets/compyvila-og.png';
+    $imageType = $hasArticleImage ? match(strtolower(pathinfo($article['image'], PATHINFO_EXTENSION))) {
+        'webp' => 'image/webp', 'jpg', 'jpeg' => 'image/jpeg', default => 'image/png',
+    } : 'image/png';
     $shareTitle = $title.' — Compyvila';
-    $imageAlt = 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.';
+    $imageAlt = $hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.';
 @endphp
 <link rel="canonical" href="{{ $canonical }}">
 <meta property="og:site_name" content="Compyvila">
@@ -14,7 +18,7 @@
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:image" content="{{ $shareImage }}">
 <meta property="og:image:secure_url" content="{{ $shareImage }}">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image:type" content="{{ $imageType }}">
 <meta property="og:image:alt" content="{{ $imageAlt }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $shareTitle }}">

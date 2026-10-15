@@ -110,6 +110,21 @@ try {
       await writeFile('storage/qa-media-kit.png', Buffer.from(shot.data, 'base64'));
     }
   }
+  if (process.argv.includes('--ai-series')) {
+    for (const width of [1440,390]) {
+      await call('Emulation.setDeviceMetricsOverride', {width,height:1100,deviceScaleFactor:1,mobile:width<600});
+      for (const slug of ['ai-agents-crypto-wallets','bittensor-decentralized-ai','akash-ai-gpu-compute']) {
+        await navigate('/read/'+slug);
+        assert(await evaluate(`document.querySelector('.article-banner img')?.naturalWidth > 1000`), `Creative banner loads for ${slug}`);
+        assert(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), `${slug} fits ${width}px`);
+        assert(await evaluate(`document.querySelector('meta[property="og:image"]').content.endsWith('/assets/articles/${slug}.webp')`), 'Social preview uses the article banner');
+        if (slug === 'ai-agents-crypto-wallets') {
+          const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});
+          await writeFile(`storage/qa-ai-article-${width}.png`,Buffer.from(shot.data,'base64'));
+        }
+      }
+    }
+  }
   if (process.argv.includes('--guides')) {
     for (const width of [1440, 390]) {
       await call('Emulation.setDeviceMetricsOverride', { width, height: 1100, deviceScaleFactor: 1, mobile: width === 390 });

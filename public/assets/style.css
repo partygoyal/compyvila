@@ -18,3 +18,6 @@
 .article-body h3{font-size:1.25rem;line-height:1.4;margin:2rem 0 .75rem}.article-body a{color:var(--orange,#d84d22);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}.article-body ul,.article-body ol{padding-left:1.5rem;margin:1.25rem 0}.article-body li{margin:.6rem 0;line-height:1.8}.article-body table{display:block;overflow-x:auto;max-width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}.article-body th,.article-body td{padding:.8rem 1rem;border:1px solid #dedbd4;text-align:left;min-width:140px}.article-body th{background:#f1eee7}.article-body strong{font-weight:700}
 
 :root{--orange:#f15a24;--ink:#20231f;--paper:#f8f7f2;--muted:#696b62;--line:#d9ddd1}
+
+/* Preserve complete editorial banner artwork and typography. */
+.article-art.article-banner{height:auto;aspect-ratio:auto}.article-art.article-banner img{width:100%;height:auto;background:#f8f7f2}.hero-story-art>img[src^="/assets/articles/"],.story-visual>img[src^="/assets/articles/"]{object-fit:contain;background:#f8f7f2}

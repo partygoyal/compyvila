@@ -64,7 +64,7 @@ class ArticleController extends Controller
             }
             throw $exception;
         }
-        if ($oldImage && $oldImage !== $image) {
+        if ($oldImage && str_starts_with($oldImage, '/uploads/') && $oldImage !== $image) {
             Storage::disk('editorial')->delete(basename($oldImage));
         }
 

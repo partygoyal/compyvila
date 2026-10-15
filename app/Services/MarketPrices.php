@@ -10,32 +10,41 @@ use Illuminate\Support\Carbon;
 
 class MarketPrices
 {
+    public const ASSETS = [
+        1 => 'BTC', 1027 => 'ETH', 5426 => 'SOL', 1839 => 'BNB',
+        52 => 'XRP', 74 => 'DOGE', 2010 => 'ADA', 1958 => 'TRX',
+        5805 => 'AVAX', 1975 => 'LINK', 6636 => 'DOT', 2 => 'LTC',
+        1831 => 'BCH', 7083 => 'UNI', 6535 => 'NEAR', 20947 => 'SUI',
+        21794 => 'APT', 22974 => 'TAO', 5690 => 'RENDER', 7278 => 'AAVE',
+    ];
+
     public function quotes(): Collection
     {
         if (! config('market.key')) {
             return Snapshot::orderBy('id')->get();
         }
         $cache = Cache::store(config('market.cache_store'));
-        if (! $cache->has('market.cmc.attempt')) {
-            $lock = $cache->lock('market.cmc.refresh', 20);
+        if (! $cache->has('market.cmc.v2.attempt')) {
+            $lock = $cache->lock('market.cmc.v2.refresh', 20);
             if ($lock->get()) {
                 try {
-                    if (! $cache->has('market.cmc.attempt')) {
+                    if (! $cache->has('market.cmc.v2.attempt')) {
                         // Bound calls even when the provider fails; never expose credentials or response errors.
-                        $cache->put('market.cmc.attempt', true, 300);
+                        $cache->put('market.cmc.v2.attempt', true, 300);
                         $response = Http::withHeaders(['X-CMC_PRO_API_KEY' => config('market.key')])
                             ->connectTimeout(3)->timeout(6)->get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', [
-                                'id' => '1,1027,5426,1839', 'convert' => 'USD',
+                                'id' => implode(',', array_keys(self::ASSETS)), 'convert' => 'USD',
                             ])->throw()->json();
                         if (($response['status']['error_code'] ?? -1) !== 0) {
                             throw new \RuntimeException('Market provider unavailable');
                         }
                         $quotes = [];
-                        foreach ([1 => 'BTC', 1027 => 'ETH', 5426 => 'SOL', 1839 => 'BNB'] as $id => $symbol) {
+                        foreach (self::ASSETS as $id => $symbol) {
                             $asset = $response['data'][$id] ?? [];
                             $quote = $asset['quote']['USD'] ?? [];
                             if (($asset['symbol'] ?? '') !== $symbol || ! is_numeric($quote['price'] ?? null)
                                 || $quote['price'] <= 0 || ! is_numeric($quote['percent_change_24h'] ?? null)
+                                || ! preg_match('/^[a-z0-9-]+$/', $asset['slug'] ?? '')
                                 || empty($quote['last_updated'])) {
                                 throw new \RuntimeException('Incomplete market response');
                             }
@@ -46,10 +55,10 @@ class MarketPrices
                             $quotes[] = ['symbol' => $symbol, 'name' => $asset['name'], 'price' => (float) $quote['price'],
                                 'change_pct' => (float) $quote['percent_change_24h'],
                                 'captured_at' => $observed->setTimezone(config('app.timezone'))->format('Y-m-d H:i:s'),
-                                'source' => 'https://coinmarketcap.com/currencies/'.['BTC'=>'bitcoin','ETH'=>'ethereum','SOL'=>'solana','BNB'=>'bnb'][$symbol].'/',
+                                'source' => 'https://coinmarketcap.com/currencies/'.$asset['slug'].'/',
                             ];
                         }
-                        $cache->forever('market.cmc.quotes', $quotes);
+                        $cache->forever('market.cmc.v2.quotes', $quotes);
                     }
                 } catch (\Throwable $error) {
                     // Preserve verified data. Manual/demo prices must never substitute for failed API quotes.
@@ -58,7 +67,7 @@ class MarketPrices
                 }
             }
         }
-        return collect($cache->get('market.cmc.quotes', []))->map(function ($quote) {
+        return collect($cache->get('market.cmc.v2.quotes', []))->map(function ($quote) {
             $quote['stale'] = Carbon::parse($quote['captured_at'])->lt(now()->subMinutes(15));
             return $quote;
         });

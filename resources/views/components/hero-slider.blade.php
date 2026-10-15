@@ -12,7 +12,7 @@
                 <p>{{ $post->excerpt }}</p>
                 <a class="button dark" href="{{ route('articles.show', $post->slug) }}">Read the story <span>↗</span></a>
             </div>
-            <a class="hero-story-art" href="{{ route('articles.show', $post->slug) }}" tabindex="-1" aria-hidden="true">
+            <a class="hero-story-art{{ $post->image ? ' hero-story-art--image' : '' }}" href="{{ route('articles.show', $post->slug) }}" tabindex="-1" aria-hidden="true">
                 @if($post->image)
                     <img src="{{ $post->image }}" alt="" @if($loop->first) fetchpriority="high" @else loading="lazy" @endif>
                 @else

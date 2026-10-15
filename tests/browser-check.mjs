@@ -69,6 +69,13 @@ try {
       await evaluate(`document.querySelector('[data-hero-next]').click()`);
       assert(await evaluate(`!document.querySelectorAll('[data-hero-slide]')[0].hidden && document.querySelector('[data-hero-counter]').textContent.trim().startsWith('01')`), `Hero wraps to first post at ${width}px`);
     }
+    const bannerSlides = await evaluate(`Array.from(document.querySelectorAll('[data-hero-slide]')).flatMap((slide,i)=>slide.querySelector('.hero-story-art--image img') ? [i] : [])`);
+    for (const index of bannerSlides) {
+      await evaluate(`document.querySelectorAll('[data-hero-dot]')[${index}]?.click()`);
+      const banner = await evaluate(`(()=>{const img=document.querySelector('.hero-slide:not([hidden]) .hero-story-art--image img');const frame=img.parentElement.getBoundingClientRect();return {fit:getComputedStyle(img).objectFit,ratio:frame.width/frame.height};})()`);
+      assert(banner.fit === 'contain' && Math.abs(banner.ratio-1.9)<0.03, `Homepage shows complete banner ${index+1} at ${width}px`);
+    }
+    if (bannerSlides.length) await evaluate(`document.querySelector('[data-hero-dot]')?.click()`);
     const metrics = await evaluate(`({ viewport: innerWidth, page: document.documentElement.scrollWidth, overflowing: Array.from(document.querySelectorAll('body *')).filter(e => e.getBoundingClientRect().right > innerWidth + 2 && getComputedStyle(e).position !== 'absolute' && getComputedStyle(e).position !== 'fixed').slice(0,8).map(e=>e.tagName+'.'+e.className) })`);
     assert(metrics.page <= metrics.viewport, `Homepage fits ${width}px viewport: ${JSON.stringify(metrics)}`);
     if (width !== 768) {

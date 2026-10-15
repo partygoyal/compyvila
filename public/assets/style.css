@@ -21,3 +21,6 @@
 
 /* Preserve complete editorial banner artwork and typography. */
 .article-art.article-banner{height:auto;aspect-ratio:auto}.article-art.article-banner img{width:100%;height:auto;background:#f8f7f2}.hero-story-art>img[src^="/assets/articles/"],.story-visual>img[src^="/assets/articles/"]{object-fit:contain;background:#f8f7f2}
+
+/* Full-width homepage banners: never crop the article artwork. */
+.hero-story-art.hero-story-art--image{height:auto;aspect-ratio:1.9;display:flex;align-items:center;justify-content:center;align-self:center;background:#f8f7f2}.hero-story-art.hero-story-art--image>img{width:100%;height:100%;object-fit:contain}

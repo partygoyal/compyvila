@@ -17,7 +17,7 @@ Artisan::command('compyvila:publish-company-profiles {--publish : Insert missing
             'sources'=>['required','array','min:1'], 'sources.*'=>['required','url:http,https'],
             'published_at'=>['required','date_format:Y-m-d H:i:s'], 'image'=>['required','string'],
         ])->validate();
-        if ($profile['image'] !== '/assets/articles/'.$profile['slug'].'.jpg' || ! is_file(public_path(ltrim($profile['image'], '/')))) {
+        if (! preg_match('~^/assets/articles/'.preg_quote($profile['slug'], '~').'(?:-v[0-9]+)?\.jpg$~D', $profile['image']) || ! is_file(public_path(ltrim($profile['image'], '/')))) {
             $this->error('Missing company profile cover. No profiles published.'); return 1;
         }
         $body = file_get_contents(base_path('content/company-profiles/'.$profile['slug'].'.md'));

@@ -11,3 +11,5 @@ The original code-drawn banner and its 1200x630 JPEG social preview can be rebui
 `php scripts/build-news-covers.php /path/to/bold-font.ttf content/company-profiles.json`
 
 No external logos or photographs are copied. The font is supplied locally and is not bundled.
+
+Presentation revision: at the user’s request, the headline and banner discuss SaaS development in India without naming Esperto. The body remains a single-company profile. A versioned banner URL and new social-image fingerprint avoid reusing cached artwork. A targeted data migration updates the original live headline and image without overwriting article content or publication status.

@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "bitcoin-ether-selloff-october-15-2026",
+    "title": "Bitcoin and ether slide as futures liquidations hit $483 million",
+    "coin": "Bitcoin",
+    "excerpt": "October 15’s Asian session brought losses across major tokens, with ether accounting for the larger share of reported BTC and ETH liquidations.",
+    "sources": [
+      "https://www.coindesk.com/markets/2026/10/15/nearly-usd1-billion-in-crypto-bets-liquidated-as-bitcoin-ether-and-xrp-slide"
+    ],
+    "category": "News",
+    "image": "/assets/articles/bitcoin-ether-selloff-october-15-2026.jpg",
+    "published_at": "2026-10-15 15:20:04",
+    "cover_kicker": "MARKET UPDATE",
+    "cover_lines": [
+      "Bitcoin & ether",
+      "under pressure"
+    ]
+  },
+  {
+    "slug": "strive-buys-2822-bitcoin-october-2026",
+    "title": "Strive discloses 2,822 BTC purchase alongside $369.2 million warrant proceeds",
+    "coin": "Bitcoin",
+    "excerpt": "An SEC filing details Bitcoin purchases on October 12–13 and new financing proceeds. The purchase and financing totals are separate figures.",
+    "sources": [
+      "https://www.sec.gov/Archives/edgar/data/1920406/000162828026065816/asst-20261014.htm"
+    ],
+    "category": "News",
+    "image": "/assets/articles/strive-buys-2822-bitcoin-october-2026.jpg",
+    "published_at": "2026-10-15 15:20:03",
+    "cover_kicker": "BITCOIN TREASURIES",
+    "cover_lines": [
+      "Strive adds",
+      "2,822 bitcoin"
+    ]
+  },
+  {
+    "slug": "standard-chartered-uae-bitcoin-ether-trading",
+    "title": "Standard Chartered announces Bitcoin and ether trading for eligible UAE clients",
+    "coin": "Ethereum",
+    "excerpt": "The bank’s October 14 announcement describes account-based crypto trading with integrated custody for eligible affluent clients.",
+    "sources": [
+      "https://www.sc.com/en/press-release/standard-chartered-unveils-first-of-its-kind-cryptocurrency-trading-solution-for-affluent-clients/"
+    ],
+    "category": "News",
+    "image": "/assets/articles/standard-chartered-uae-bitcoin-ether-trading.jpg",
+    "published_at": "2026-10-15 15:20:02",
+    "cover_kicker": "CRYPTO & BANKING",
+    "cover_lines": [
+      "Crypto meets",
+      "private banking"
+    ]
+  },
+  {
+    "slug": "payward-saldo-bank-acquisition-agreement",
+    "title": "Kraken parent Payward signs Saldo Bank acquisition agreement",
+    "coin": "Altcoins",
+    "excerpt": "The proposed European banking deal is expected to close in 2027, subject to approvals and closing conditions.",
+    "sources": [
+      "https://www.payward.com/press-release/payward-acquires-saldo-bank"
+    ],
+    "category": "News",
+    "image": "/assets/articles/payward-saldo-bank-acquisition-agreement.jpg",
+    "published_at": "2026-10-15 15:20:01",
+    "cover_kicker": "EUROPEAN EXPANSION",
+    "cover_lines": [
+      "Payward plans",
+      "a banking layer"
+    ]
+  },
+  {
+    "slug": "aave-babylon-native-bitcoin-collateral-proposal",
+    "title": "Babylon proposes native Bitcoin collateral for Aave V4",
+    "coin": "Bitcoin",
+    "excerpt": "An October 14 governance proposal outlines Bitcoin vault collateral and stablecoin borrowing. It remains a proposal rather than a confirmed launch.",
+    "sources": [
+      "https://governance.aave.com/t/arfc-onboard-native-btc-as-collateral-to-aave-v4-via-babylon-trustless-bitcoin-vaults/25845"
+    ],
+    "category": "News",
+    "image": "/assets/articles/aave-babylon-native-bitcoin-collateral-proposal.jpg",
+    "published_at": "2026-10-15 15:20:00",
+    "cover_kicker": "DEFI / GOVERNANCE",
+    "cover_lines": [
+      "Native bitcoin.",
+      "New collateral?"
+    ]
+  }
+]

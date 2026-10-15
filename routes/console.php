@@ -6,6 +6,43 @@ use App\Models\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
+Artisan::command('compyvila:publish-news {--publish : Insert the October 15 news edition; otherwise validate only}', function () {
+    $articles = json_decode(file_get_contents(base_path('content/news-2026-10-15.json')), true, flags: JSON_THROW_ON_ERROR);
+    $records = [];
+    foreach ($articles as $article) {
+        Validator::make($article, [
+            'slug'=>['required','regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/','max:190'],
+            'title'=>['required','string','max:250'], 'excerpt'=>['required','string','max:1000'],
+            'category'=>['required','in:News'], 'coin'=>['required','in:Bitcoin,Ethereum,Altcoins'],
+            'sources'=>['required','array','min:1'], 'sources.*'=>['required','url:http,https'],
+            'published_at'=>['required','date_format:Y-m-d H:i:s'], 'image'=>['required','string'],
+        ])->validate();
+        if ($article['image'] !== '/assets/articles/'.$article['slug'].'.jpg' || ! is_file(public_path(ltrim($article['image'], '/')))) {
+            $this->error('Missing news cover. No articles published.');
+            return 1;
+        }
+        $body = file_get_contents(base_path('content/news-2026-10-15/'.$article['slug'].'.md'));
+        Validator::make(['body'=>$body], ['body'=>['required','string','min:100','max:60000']])->validate();
+        unset($article['cover_kicker'], $article['cover_lines']);
+        $records[] = array_merge($article, ['body'=>$body, 'sources'=>implode("\n", $article['sources'])]);
+    }
+    if (count($records) !== 5 || count(array_unique(array_column($records, 'slug'))) !== 5) {
+        $this->error('Expected five unique news stories.'); return 1;
+    }
+    if (! $this->option('publish')) {
+        $this->info('Five news stories validated. Use --publish to insert missing articles.'); return 0;
+    }
+    DB::transaction(function () use ($records) {
+        foreach ($records as $record) {
+            $article = Article::firstOrCreate(['slug'=>$record['slug']], array_merge($record, [
+                'status'=>'published', 'featured'=>false, 'updated_at'=>$record['published_at'],
+            ]));
+            $this->line(($article->wasRecentlyCreated ? 'Published: ' : 'Preserved existing: ').$article->slug);
+        }
+    });
+    return 0;
+})->purpose('Publish five sourced news reports for October 15, preserving existing editorial changes');
+
 Artisan::command('compyvila:publish-ai-series {--publish : Insert missing articles; otherwise validate only}', function () {
     $articles = json_decode(file_get_contents(base_path('content/ai-series.json')), true, flags: JSON_THROW_ON_ERROR);
     $records = [];

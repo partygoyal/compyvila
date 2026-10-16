@@ -42,8 +42,12 @@ Artisan::command('compyvila:publish-company-profiles {--publish : Insert missing
     return 0;
 })->purpose('Publish sourced technology company profiles while preserving existing editorial changes');
 
-Artisan::command('compyvila:publish-news {--publish : Insert the October 15 news edition; otherwise validate only}', function () {
-    $articles = json_decode(file_get_contents(base_path('content/news-2026-10-15.json')), true, flags: JSON_THROW_ON_ERROR);
+Artisan::command('compyvila:publish-news {edition=2026-10-15 : Edition date (YYYY-MM-DD)} {--publish : Insert missing news articles; otherwise validate only}', function () {
+    $edition = $this->argument('edition');
+    if (! preg_match('/^2026-[0-9]{2}-[0-9]{2}$/D', $edition) || ! is_file(base_path('content/news-'.$edition.'.json'))) {
+        $this->error('Unknown news edition.'); return 1;
+    }
+    $articles = json_decode(file_get_contents(base_path('content/news-'.$edition.'.json')), true, flags: JSON_THROW_ON_ERROR);
     $records = [];
     foreach ($articles as $article) {
         Validator::make($article, [
@@ -57,9 +61,9 @@ Artisan::command('compyvila:publish-news {--publish : Insert the October 15 news
             $this->error('Missing news cover. No articles published.');
             return 1;
         }
-        $body = file_get_contents(base_path('content/news-2026-10-15/'.$article['slug'].'.md'));
+        $body = file_get_contents(base_path('content/news-'.$edition.'/'.$article['slug'].'.md'));
         Validator::make(['body'=>$body], ['body'=>['required','string','min:100','max:60000']])->validate();
-        unset($article['cover_kicker'], $article['cover_lines']);
+        $article = \Illuminate\Support\Arr::only($article, ['slug','title','excerpt','category','coin','image','published_at','sources']);
         $records[] = array_merge($article, ['body'=>$body, 'sources'=>implode("\n", $article['sources'])]);
     }
     if (count($records) !== 5 || count(array_unique(array_column($records, 'slug'))) !== 5) {
@@ -77,7 +81,7 @@ Artisan::command('compyvila:publish-news {--publish : Insert the October 15 news
         }
     });
     return 0;
-})->purpose('Publish five sourced news reports for October 15, preserving existing editorial changes');
+})->purpose('Publish a sourced daily news edition, preserving existing editorial changes');
 
 Artisan::command('compyvila:publish-ai-series {--publish : Insert missing articles; otherwise validate only}', function () {
     $articles = json_decode(file_get_contents(base_path('content/ai-series.json')), true, flags: JSON_THROW_ON_ERROR);

@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "bitcoin-rebound-fades-october-16-2026",
+    "title": "Bitcoin rebound fades as tech stocks weaken in October 16 trading",
+    "coin": "Bitcoin",
+    "excerpt": "A late U.S. morning report put BTC near $81,300 as technology shares fell and oil climbed. These are timestamped observations.",
+    "sources": [
+      "https://www.coindesk.com/markets/2026/10/16/live-updates-bitcoin-back-above-usd82-000-zec-jumps-11-as-etf-outflows-continue"
+    ],
+    "category": "News",
+    "image": "/assets/articles/bitcoin-rebound-fades-october-16-2026.jpg",
+    "published_at": "2026-10-16 23:08:04",
+    "cover_kicker": "MARKETS / DAILY UPDATE",
+    "cover_lines": [
+      "Bitcoin’s rebound",
+      "meets resistance"
+    ],
+    "cover_footer": "THE DAILY EDITION / 16 OCT 2026",
+    "cover_icon": "BTC"
+  },
+  {
+    "slug": "msci-index-rules-crypto-treasury-companies",
+    "title": "MSCI finalizes index rules that could affect crypto treasury companies",
+    "coin": "Bitcoin",
+    "excerpt": "MSCI’s new eligibility methodology takes effect November 30. Strategy and Metaplanet’s removal remains unconfirmed.",
+    "sources": [
+      "https://app2.msci.com/webapp/index_ann/DocGet?format=html&lang=en&pub_key=aq0wbkjxPgo%3D",
+      "https://www.coindesk.com/markets/2026/10/16/msci-approves-rules-that-could-eject-strategy-metaplanet-from-equity-indexes"
+    ],
+    "category": "News",
+    "image": "/assets/articles/msci-index-rules-crypto-treasury-companies.jpg",
+    "published_at": "2026-10-16 23:08:03",
+    "cover_kicker": "BITCOIN / EQUITY INDEXES",
+    "cover_lines": [
+      "New index rules.",
+      "Treasuries in focus."
+    ],
+    "cover_footer": "THE DAILY EDITION / 16 OCT 2026",
+    "cover_icon": "BTC"
+  },
+  {
+    "slug": "circle-emerging-market-usdc-expansion",
+    "title": "Circle plans emerging-market expansion as digital-dollar demand grows",
+    "coin": "Altcoins",
+    "excerpt": "Reported expansion plans and Circle’s latest USDC activity update put stablecoin payments in focus.",
+    "sources": [
+      "https://crypto.news/circle-wants-to-enter-40-more-markets-where-can-usdc-actually-be-used/",
+      "https://www.circle.com/blog/the-economics-of-usdc-and-why-our-partners-win"
+    ],
+    "category": "News",
+    "image": "/assets/articles/circle-emerging-market-usdc-expansion.jpg",
+    "published_at": "2026-10-16 23:08:02",
+    "cover_kicker": "STABLECOINS / PAYMENTS",
+    "cover_lines": [
+      "Digital dollars.",
+      "Wider horizons."
+    ],
+    "cover_footer": "THE DAILY EDITION / 16 OCT 2026",
+    "cover_icon": "USDC"
+  },
+  {
+    "slug": "quantum-alliance-blockchain-security-standards",
+    "title": "Quantum Alliance forms to develop blockchain security standards",
+    "coin": "Bitcoin",
+    "excerpt": "Nine organizations are collaborating on post-quantum readiness and verification. The initiative is not a completed network upgrade.",
+    "sources": [
+      "https://hacken.io/network/hacken-joins-the-quantum-alliance-as-a-founding-member/",
+      "https://www.coindesk.com/tech/2026/10/16/experts-agree-quantum-computers-could-put-satoshi-s-bitcoin-at-risk-but-not-on-what-s-next"
+    ],
+    "category": "News",
+    "image": "/assets/articles/quantum-alliance-blockchain-security-standards.jpg",
+    "published_at": "2026-10-16 23:08:01",
+    "cover_kicker": "SECURITY / POST-QUANTUM",
+    "cover_lines": [
+      "Tomorrow’s security.",
+      "Today’s groundwork."
+    ],
+    "cover_footer": "THE DAILY EDITION / 16 OCT 2026",
+    "cover_icon": "BTC"
+  },
+  {
+    "slug": "gemini-cftc-settlement-reversal-rejected",
+    "title": "Judge rejects Gemini and CFTC request to undo $5 million settlement",
+    "coin": "Altcoins",
+    "excerpt": "October 16 reporting describes Thursday’s ruling, which leaves the existing settlement in place rather than imposing a new fine.",
+    "sources": [
+      "https://www.coindesk.com/policy/2026/10/16/u-s-judge-rejects-gemini-s-appeal-to-void-usd5-million-settlement-despite-cftc-backing"
+    ],
+    "category": "News",
+    "image": "/assets/articles/gemini-cftc-settlement-reversal-rejected.jpg",
+    "published_at": "2026-10-16 23:08:00",
+    "cover_kicker": "REGULATION / US COURTS",
+    "cover_lines": [
+      "A settlement",
+      "stays in place."
+    ],
+    "cover_footer": "THE DAILY EDITION / 16 OCT 2026",
+    "cover_icon": "LAW"
+  }
+]

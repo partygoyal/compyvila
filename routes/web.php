@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicationController::class, 'home'])->name('home');
 Route::get('/read/{slug}', [PublicationController::class, 'article'])->name('articles.show');
+Route::get('/creator-network', [\App\Http\Controllers\CreatorController::class, 'index'])->name('creators.index');
+Route::post('/creator-network', [\App\Http\Controllers\CreatorController::class, 'store'])->middleware('throttle:5,1')->name('creators.store');
 Route::get('/calendar', [PublicationController::class, 'calendar'])->name('calendar');
 Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{slug}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
@@ -21,6 +23,10 @@ Route::post('/media-enquiry', [EnquiryController::class, 'store'])->middleware('
 Route::get('/admin/login', [AuthController::class, 'create'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'store'])->name('admin.login.store');
 Route::prefix('admin')->name('admin.')->middleware('editorial')->group(function () {
+    Route::get('/creators', [\App\Http\Controllers\Admin\CreatorController::class, 'index'])->name('creators.index');
+    Route::get('/creators/{creator}', [\App\Http\Controllers\Admin\CreatorController::class, 'show'])->whereNumber('creator')->name('creators.show');
+    Route::patch('/creators/{creator}', [\App\Http\Controllers\Admin\CreatorController::class, 'update'])->whereNumber('creator')->name('creators.update');
+    Route::delete('/creators/{creator}', [\App\Http\Controllers\Admin\CreatorController::class, 'destroy'])->whereNumber('creator')->name('creators.destroy');
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
     Route::get('/article', [ArticleController::class, 'edit'])->name('articles.edit');

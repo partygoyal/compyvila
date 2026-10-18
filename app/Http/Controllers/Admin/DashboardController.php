@@ -21,7 +21,7 @@ class DashboardController extends Controller
             'events' => $tab === 'events' ? Event::orderBy('event_at')->get() : collect(),
             'subscribers' => $tab === 'subscribers' ? Subscriber::latest('created_at')->get() : collect(),
             'enquiries' => $tab === 'enquiries' ? Enquiry::latest('created_at')->get() : collect(),
-            'counts' => ['articles' => Article::count(), 'projects' => Project::count(), 'events' => Event::count(), 'subscribers' => Subscriber::count(), 'enquiries' => Enquiry::count()],
+            'counts' => ['creators'=>\App\Models\CreatorApplication::count(), 'articles' => Article::count(), 'projects' => Project::count(), 'events' => Event::count(), 'subscribers' => Subscriber::count(), 'enquiries' => Enquiry::count()],
         ]);
     }
 }

@@ -1,0 +1,564 @@
+[
+  {
+    "slug": "profit-loss",
+    "title": "Crypto Profit & Loss Calculator",
+    "group": "Trading",
+    "summary": "See what a trade returns after buying and selling fees.",
+    "fields": [
+      {
+        "key": "buy",
+        "label": "Buy price",
+        "value": 100,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "sell",
+        "label": "Sell price",
+        "value": 125,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "quantity",
+        "label": "Token quantity",
+        "value": 10,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "buyFee",
+        "label": "Buy fee (%)",
+        "value": 0.1,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "sellFee",
+        "label": "Sell fee (%)",
+        "value": 0.1,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      }
+    ],
+    "formula": "Net profit = sale proceeds after fees \u2212 purchase cost including fees. ROI = profit \u00f7 purchase cost \u00d7 100.",
+    "note": "Fees are percentages of trade value. Excludes taxes, funding, slippage and network costs. Use one consistent currency.",
+    "example": "Buying 10 tokens at 100 and selling at 125 with 0.1% fees on each side produces 247.75 net profit.",
+    "rows": null
+  },
+  {
+    "slug": "average-buy-price",
+    "title": "Average Buy Price Calculator",
+    "group": "Trading",
+    "summary": "Combine purchases to find your average cost per token.",
+    "fields": [],
+    "formula": "Average cost = sum of quantity \u00d7 price plus purchase fees, divided by total tokens.",
+    "note": "Purchase fees are fixed amounts in your chosen quote currency. Assumes fees do not reduce the token quantity. Excludes sales and tax accounting.",
+    "example": "Two tokens at 100 and one at 160, with no fees, have an average cost of 120.",
+    "rows": {
+      "columns": [
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "value": 2,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        },
+        {
+          "key": "price",
+          "label": "Price",
+          "value": 100,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        },
+        {
+          "key": "fee",
+          "label": "Fee amount",
+          "value": 0,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        }
+      ],
+      "values": [
+        {
+          "quantity": 2,
+          "price": 100,
+          "fee": 0
+        },
+        {
+          "quantity": 1,
+          "price": 160,
+          "fee": 0
+        }
+      ]
+    }
+  },
+  {
+    "slug": "position-size",
+    "title": "Position Size Calculator",
+    "group": "Trading",
+    "summary": "Turn a risk budget and stop distance into a position size.",
+    "fields": [
+      {
+        "key": "balance",
+        "label": "Account balance",
+        "value": 10000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "risk",
+        "label": "Risk per trade (%)",
+        "value": 1,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "entry",
+        "label": "Entry price",
+        "value": 100,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "stop",
+        "label": "Stop price",
+        "value": 95,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "side",
+        "label": "Direction",
+        "value": "long",
+        "unit": "",
+        "kind": "select",
+        "options": {
+          "long": "Long",
+          "short": "Short"
+        }
+      }
+    ],
+    "formula": "Risk budget = balance \u00d7 risk %. Units = risk budget \u00f7 absolute entry-to-stop distance.",
+    "note": "Stops may fill at a worse price. Excludes fees, gaps and slippage. Notional can exceed available capital; this tool does not model margin or liquidation.",
+    "example": "A 10,000 balance, 1% risk, 100 entry and 95 stop gives a risk budget of 100 and a size of 20 tokens.",
+    "rows": null
+  },
+  {
+    "slug": "market-cap-fdv",
+    "title": "Market Cap & FDV Calculator",
+    "group": "Token research",
+    "summary": "Compare circulating market value with a fully diluted estimate.",
+    "fields": [
+      {
+        "key": "price",
+        "label": "Token price",
+        "value": 2,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "circulating",
+        "label": "Circulating supply",
+        "value": 10000000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "total",
+        "label": "Fully diluted supply assumption",
+        "value": 100000000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      }
+    ],
+    "formula": "Market cap = price \u00d7 circulating supply. FDV = price \u00d7 fully diluted supply assumption.",
+    "note": "Enter the total or maximum supply you want to use for FDV. Supply definitions vary; name and verify your assumption. FDV holds price constant as supply increases.",
+    "example": "A price of 2 with 10 million circulating and a 100 million diluted supply implies 20 million market cap and 200 million FDV.",
+    "rows": null
+  },
+  {
+    "slug": "bitcoin-unit-converter",
+    "title": "Bitcoin Unit Converter",
+    "group": "Converters",
+    "summary": "Convert BTC, millibitcoin and satoshis without floating-point rounding.",
+    "fields": [
+      {
+        "key": "amount",
+        "label": "Amount",
+        "value": "1",
+        "unit": "",
+        "kind": "text",
+        "options": {}
+      },
+      {
+        "key": "unit",
+        "label": "Input unit",
+        "value": "BTC",
+        "unit": "",
+        "kind": "select",
+        "options": {
+          "BTC": "BTC",
+          "mBTC": "mBTC",
+          "sats": "Satoshis"
+        }
+      }
+    ],
+    "formula": "1 BTC = 1,000 mBTC = 100,000,000 satoshis.",
+    "note": "Accepts plain decimal notation only. Values smaller than one satoshi are rejected instead of rounded. No fiat price is used.",
+    "example": "0.00000001 BTC is exactly 1 satoshi.",
+    "rows": null
+  },
+  {
+    "slug": "ethereum-unit-converter",
+    "title": "Ethereum Unit Converter",
+    "group": "Converters",
+    "summary": "Convert ETH, gwei and wei with exact integer arithmetic.",
+    "fields": [
+      {
+        "key": "amount",
+        "label": "Amount",
+        "value": "1",
+        "unit": "",
+        "kind": "text",
+        "options": {}
+      },
+      {
+        "key": "unit",
+        "label": "Input unit",
+        "value": "ETH",
+        "unit": "",
+        "kind": "select",
+        "options": {
+          "ETH": "ETH",
+          "gwei": "Gwei",
+          "wei": "Wei"
+        }
+      }
+    ],
+    "formula": "1 ETH = 1,000,000,000 gwei = 1,000,000,000,000,000,000 wei.",
+    "note": "Accepts plain decimal notation only. Values smaller than one wei are rejected instead of rounded. No fiat price is used.",
+    "example": "0.000000001 ETH is exactly 1 gwei, or 1,000,000,000 wei.",
+    "rows": null
+  },
+  {
+    "slug": "gas-fee",
+    "title": "Ethereum Gas Fee Calculator",
+    "group": "Converters",
+    "summary": "Estimate a transaction fee from gas used and per-gas fees.",
+    "fields": [
+      {
+        "key": "gas",
+        "label": "Estimated gas used",
+        "value": 21000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "base",
+        "label": "Base fee (gwei)",
+        "value": 20,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "tip",
+        "label": "Priority fee (gwei)",
+        "value": 2,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "ethPrice",
+        "label": "Manual ETH price (USD)",
+        "value": 3000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      }
+    ],
+    "formula": "Fee in ETH = gas used \u00d7 (base fee + priority fee) \u00f7 1,000,000,000.",
+    "note": "Estimates Ethereum execution fees, excluding blob fees and extra L2 charges. Actual gas used can be lower than the gas limit. A simple ETH transfer often uses 21,000 gas; contract calls vary. Enter 0 for ETH price to omit USD.",
+    "example": "21,000 gas at 20 gwei base plus 2 gwei priority costs 0.000462 ETH.",
+    "rows": null
+  },
+  {
+    "slug": "staking-rewards",
+    "title": "Staking Rewards Simulator",
+    "group": "Planning",
+    "summary": "Explore hypothetical rewards with simple or compounded interest.",
+    "fields": [
+      {
+        "key": "principal",
+        "label": "Starting token amount",
+        "value": 1000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "apr",
+        "label": "Hypothetical APR (%)",
+        "value": 5,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "days",
+        "label": "Duration (days)",
+        "value": 365,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "frequency",
+        "label": "Compounding",
+        "value": "none",
+        "unit": "",
+        "kind": "select",
+        "options": {
+          "none": "No compounding",
+          "365": "Daily",
+          "12": "Monthly",
+          "1": "Yearly"
+        }
+      }
+    ],
+    "formula": "Simple balance = principal \u00d7 (1 + APR \u00d7 days \u00f7 365). Compounded balance = principal \u00d7 (1 + APR \u00f7 n) ^ (n \u00d7 days \u00f7 365).",
+    "note": "Constant APR assumption; fractional periods are interpolated. Rewards are in tokens, not fiat profit. Excludes fees, lockups, slashing, price changes and protocol rules. Yields are not guaranteed.",
+    "example": "1,000 tokens at 5% simple APR for 365 days produces 50 hypothetical reward tokens.",
+    "rows": null
+  },
+  {
+    "slug": "portfolio-allocation",
+    "title": "Portfolio Allocation Calculator",
+    "group": "Planning",
+    "summary": "Compare current weights with targets and plan a rebalance.",
+    "fields": [],
+    "formula": "Target value = portfolio total \u00d7 target %. Adjustment = target value \u2212 current value.",
+    "note": "Targets must sum to 100%. Rebalances at a fixed portfolio total with no added cash. Excludes fees, taxes and price movement. These targets are your inputs, not recommendations.",
+    "example": "A 1,000 portfolio with 700 BTC and 300 ETH needs a 100 sale of BTC and 100 purchase of ETH to reach a 60/40 target.",
+    "rows": {
+      "columns": [
+        {
+          "key": "asset",
+          "label": "Asset",
+          "value": "BTC",
+          "unit": "",
+          "kind": "text",
+          "options": {}
+        },
+        {
+          "key": "value",
+          "label": "Current value",
+          "value": 700,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        },
+        {
+          "key": "target",
+          "label": "Target (%)",
+          "value": 60,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        }
+      ],
+      "values": [
+        {
+          "asset": "BTC",
+          "value": 700,
+          "target": 60
+        },
+        {
+          "asset": "ETH",
+          "value": 300,
+          "target": 40
+        }
+      ]
+    }
+  },
+  {
+    "slug": "token-vesting",
+    "title": "Token Vesting Calculator",
+    "group": "Planning",
+    "summary": "Model an initial unlock followed by a linear vesting schedule.",
+    "fields": [
+      {
+        "key": "allocation",
+        "label": "Total token allocation",
+        "value": 10000,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "start",
+        "label": "Vesting start",
+        "value": "2026-01-01",
+        "unit": "",
+        "kind": "date",
+        "options": {}
+      },
+      {
+        "key": "cliff",
+        "label": "Cliff (months)",
+        "value": 3,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "duration",
+        "label": "Total duration (months)",
+        "value": 12,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "initial",
+        "label": "Initial unlock (%)",
+        "value": 10,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "asof",
+        "label": "Calculate as of",
+        "value": "2026-07-01",
+        "unit": "",
+        "kind": "date",
+        "options": {}
+      }
+    ],
+    "formula": "Initial tokens unlock at the start. Remaining tokens vest continuously after the cliff until the end. Total duration includes the cliff.",
+    "note": "This model does not accumulate a catch-up release at the cliff. Dates use UTC midnight with month-end clamping. Actual contracts can use discrete releases or different cliff rules. Verify the project schedule.",
+    "example": "10,000 tokens, 10% initial, a three-month cliff and 12-month duration: at the end of month 12, all 10,000 tokens are unlocked.",
+    "rows": null
+  },
+  {
+    "slug": "crypto-knowledge-quiz",
+    "title": "Crypto Knowledge Quiz",
+    "group": "Learn",
+    "summary": "Test your understanding of wallets, fees and crypto fundamentals.",
+    "fields": [],
+    "formula": "Choose one answer for each question. Each correct answer earns one point.",
+    "note": "Educational questions cover general concepts. Never enter wallet secrets into a quiz or calculator.",
+    "example": "Review an explanation after every answer, then restart to try again.",
+    "rows": null
+  },
+  {
+    "slug": "creator-campaign-planner",
+    "title": "Creator Campaign Planner",
+    "group": "Creators",
+    "summary": "Build a campaign quote and estimate your payout from your own rates.",
+    "fields": [
+      {
+        "key": "currency",
+        "label": "Currency",
+        "value": "USD",
+        "unit": "",
+        "kind": "select",
+        "options": {
+          "USD": "USD",
+          "INR": "INR",
+          "EUR": "EUR",
+          "GBP": "GBP"
+        }
+      },
+      {
+        "key": "rights",
+        "label": "Usage rights uplift (%)",
+        "value": 20,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "exclusivity",
+        "label": "Exclusivity fee",
+        "value": 0,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "expenses",
+        "label": "Production expenses",
+        "value": 100,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      },
+      {
+        "key": "commission",
+        "label": "Agency commission (%)",
+        "value": 10,
+        "unit": "",
+        "kind": "number",
+        "options": {}
+      }
+    ],
+    "formula": "Brand quote = deliverables subtotal + usage uplift + exclusivity + reimbursed expenses. Creator payout = quote \u2212 commission on fees \u2212 production expenses.",
+    "note": "Commission applies to fees including rights and exclusivity, excluding reimbursed production expenses. Excludes tax. All rates are supplied by you, not market benchmarks or guaranteed deals.",
+    "example": "Two posts at 250, 20% usage rights, 100 expenses and 10% commission produces a 700 brand quote and 540 creator payout.",
+    "rows": {
+      "columns": [
+        {
+          "key": "item",
+          "label": "Deliverable",
+          "value": "Sponsored post",
+          "unit": "",
+          "kind": "text",
+          "options": {}
+        },
+        {
+          "key": "quantity",
+          "label": "Quantity",
+          "value": 2,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        },
+        {
+          "key": "rate",
+          "label": "Unit rate",
+          "value": 250,
+          "unit": "",
+          "kind": "number",
+          "options": {}
+        }
+      ],
+      "values": [
+        {
+          "item": "Sponsored post",
+          "quantity": 2,
+          "rate": 250
+        }
+      ]
+    }
+  }
+]

@@ -6,7 +6,7 @@
     $shareImage = $preview['url'];
     $imageType = $preview['type'];
     $shareTitle = $title.' — Compyvila';
-    $imageAlt = $socialImageAlt ?? ($hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.');
+    $imageAlt = $socialImageAlt ?? ($hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. The C and orange signal-spark logo with markets, analysis, and updates.');
 @endphp
 <link rel="canonical" href="{{ $canonical }}">
 <meta property="og:site_name" content="Compyvila">

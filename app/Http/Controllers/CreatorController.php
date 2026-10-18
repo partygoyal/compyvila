@@ -10,7 +10,7 @@ class CreatorController extends Controller
 {
     public function index()
     {
-        return view('creators', ['title'=>'Join the Compyvila Creator Network','description'=>'Join Compyvila’s network for crypto creators. Apply for paid brand collaborations, campaign opportunities, and long-term partnerships.', 'path'=>'/creator-network', 'socialPreview'=>['url'=>rtrim(config('app.url'),'/').'/assets/social/creator-network-v1.jpg','type'=>'image/jpeg','width'=>1200,'height'=>630], 'socialImageAlt'=>'Compyvila Creator Network — Your voice. Bigger possibilities.']);
+        return view('creators', ['title'=>'Join the Compyvila Creator Network','description'=>'Join Compyvila’s network for crypto creators. Apply for paid brand collaborations, campaign opportunities, and long-term partnerships.', 'path'=>'/creator-network', 'socialPreview'=>['url'=>rtrim(config('app.url'),'/').'/assets/social/creator-network-v2.jpg','type'=>'image/jpeg','width'=>1200,'height'=>630], 'socialImageAlt'=>'Compyvila Creator Network — Your voice. Bigger possibilities.']);
     }
     public function store(Request $request)
     {

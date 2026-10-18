@@ -94,7 +94,7 @@ Artisan::command('compyvila:publish-ai-series {--publish : Insert missing articl
             'sources'=>['required','array','min:1'], 'sources.*'=>['required','url:http,https'],
             'image'=>['required','string'],
         ])->validate();
-        if ($article['image'] !== '/assets/articles/'.$article['slug'].'.webp' || ! is_file(public_path(ltrim($article['image'], '/')))) {
+        if (! preg_match('~^/assets/articles/'.preg_quote($article['slug'],'~').'(?:-v[0-9]+)?\.webp$~D',$article['image']) || ! is_file(public_path(ltrim($article['image'], '/')))) {
             $this->error('Missing or invalid banner for '.$article['slug'].'. No articles published.');
             return 1;
         }

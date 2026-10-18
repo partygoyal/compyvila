@@ -10,25 +10,25 @@
       "https://github.com/coinbase/agentkit/blob/main/python/coinbase-agentkit/README.md",
       "https://docs.cdp.coinbase.com/agentic-wallet/cli/skills/overview"
     ],
-    "image": "/assets/articles/ai-agents-crypto-wallets.webp"
+    "image": "/assets/articles/ai-agents-crypto-wallets-v3.webp"
   },
   {
     "slug": "bittensor-decentralized-ai",
     "title": "Decentralized AI explained: how Bittensor connects models, evaluation, and incentives",
     "category": "Analysis",
     "coin": "Altcoins",
-    "excerpt": "Bittensor organizes specialized digital services into subnets. Learn how miners, validators, and token incentives connect\u2014and why rewards do not prove model quality.",
+    "excerpt": "Bittensor organizes specialized digital services into subnets. Learn how miners, validators, and token incentives connect—and why rewards do not prove model quality.",
     "sources": [
       "https://www.bittensor.com/docs",
       "https://www.bittensor.com/docs/guides/mining",
       "https://guides.learnbittensor.org/subnets/understanding-subnets",
       "https://www.bittensor.com/docs/guides/validating"
     ],
-    "image": "/assets/articles/bittensor-decentralized-ai.webp"
+    "image": "/assets/articles/bittensor-decentralized-ai-v3.webp"
   },
   {
     "slug": "akash-ai-gpu-compute",
-    "title": "How Akash supports AI: GPU marketplaces, model hosting, and the blockchain\u2019s role",
+    "title": "How Akash supports AI: GPU marketplaces, model hosting, and the blockchain’s role",
     "category": "Analysis",
     "coin": "Altcoins",
     "excerpt": "AI needs hardware as well as models. Explore how Akash connects GPU providers and deployment leases, what runs offchain, and how to evaluate an AI hosting setup.",
@@ -37,6 +37,6 @@
       "https://akash.network/docs/learn/core-concepts/providers-leases/",
       "https://akash.network/docs/"
     ],
-    "image": "/assets/articles/akash-ai-gpu-compute.webp"
+    "image": "/assets/articles/akash-ai-gpu-compute-v3.webp"
   }
 ]

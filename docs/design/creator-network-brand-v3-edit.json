@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: compositing. Edit the first image (Compyvila Creator Network banner). Replace ONLY the old upper-left compyvila wordmark with the exact new logo from the second image: dark rounded-square icon, ivory C and small orange four-point signal spark, followed by the outlined dark compyvila wordmark and orange period. Preserve the precise shapes, proportions and lettering of the provided new logo. Place it within the same upper-left safe area, with an overall width about 360px in this 1200x630 composition. Keep every other element unchanged: ivory background, CREATOR NETWORK headline, Your voice. Bigger possibilities. text, URL, purple glass microphone, orange play card, lime star card, orbiting ribbons, colors and composition. Clean flat vector-looking logo, no 3D effects on the logo, no added text. Final aspect ratio 1200:630.",
+  "inputs": [
+    "public/assets/social/creator-network-v1.jpg",
+    "public/assets/compyvila-logo-v3.png"
+  ],
+  "asset": "public/assets/social/creator-network-v2.jpg",
+  "width": 1200,
+  "height": 630
+}

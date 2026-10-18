@@ -53,7 +53,7 @@ class AiSeriesTest extends TestCase
             }
             $this->get('/sitemap.xml')->assertSee('/read/'.$article['slug']);
         }
-        $this->get('/')->assertOk()->assertSee('/assets/articles/akash-ai-gpu-compute.webp');
+        $this->get('/')->assertOk()->assertSee('/assets/articles/akash-ai-gpu-compute-v3.webp');
     }
 
     public function test_deleting_a_bundled_banner_article_cannot_remove_an_unrelated_upload(): void

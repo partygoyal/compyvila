@@ -25,7 +25,7 @@ class SocialPreviewTest extends TestCase
             $this->withHeader('User-Agent',$agent)->get('/news')->assertOk()
                 ->assertSee('property="og:image:width" content="1200"',false)
                 ->assertSee('property="og:image:height" content="630"',false)
-                ->assertSee('image/jpeg')->assertSee('https://compyvila.com/assets/social/compyvila-v3.jpg');
+                ->assertSee('image/jpeg')->assertSee('https://compyvila.com/assets/social/compyvila-v4.jpg');
         }
         $this->assertSame(SocialPreview::image(null),SocialPreview::image('/../../.env'));
         $this->assertSame(SocialPreview::image(null),SocialPreview::image('https://example.com/image.jpg'));

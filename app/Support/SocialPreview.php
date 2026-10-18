@@ -6,7 +6,7 @@ class SocialPreview
 {
     public static function image(?string $image): array
     {
-        $fallback = '/assets/social/compyvila-v3.jpg';
+        $fallback = '/assets/social/compyvila-v4.jpg';
         if (! $image || ! preg_match('~^/(?:uploads|assets/articles)/[a-zA-Z0-9_.-]+$~D', $image)) {
             return self::metadata($fallback);
         }

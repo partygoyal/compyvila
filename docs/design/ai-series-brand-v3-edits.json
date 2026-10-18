@@ -1,0 +1,18 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "public/assets/compyvila-logo-v3.png (light variant for Akash)",
+  "assets": [
+    {
+      "asset": "public/assets/articles/ai-agents-crypto-wallets-v3.webp",
+      "prompt": "Use case: compositing. Edit the first input image, the ai-agents-crypto-wallets editorial banner. Replace ONLY the old small compyvila wordmark in the upper-left corner with the complete new logo from input image 2. The new logo is a dark rounded square with an ivory C and an orange four-point signal spark, followed by the exact compyvila wordmark and orange period. Use the supplied shapes and typography, keep proportions intact, flat graphic treatment. Make the replacement about 300 pixels wide in a 1732-pixel-wide banner, within the original upper-left safe area. Keep the existing dark wordmark treatment from input 2 so it contrasts with the background. Preserve ALL other artwork, large headline text, taglines, colors, lighting, textures, composition and landscape aspect ratio unchanged. Do not add any additional text. Do not change the illustration."
+    },
+    {
+      "asset": "public/assets/articles/bittensor-decentralized-ai-v3.webp",
+      "prompt": "Use case: compositing. Edit the first input image, the bittensor-decentralized-ai editorial banner. Replace ONLY the old small compyvila wordmark in the upper-left corner with the complete new logo from input image 2. The new logo is a dark rounded square with an ivory C and an orange four-point signal spark, followed by the exact compyvila wordmark and orange period. Use the supplied shapes and typography, keep proportions intact, flat graphic treatment. Make the replacement about 300 pixels wide in a 1732-pixel-wide banner, within the original upper-left safe area. Keep the existing dark wordmark treatment from input 2 so it contrasts with the background. Preserve ALL other artwork, large headline text, taglines, colors, lighting, textures, composition and landscape aspect ratio unchanged. Do not add any additional text. Do not change the illustration."
+    },
+    {
+      "asset": "public/assets/articles/akash-ai-gpu-compute-v3.webp",
+      "prompt": "Use case: compositing. Edit the first input image, the akash-ai-gpu-compute editorial banner. Replace ONLY the old small compyvila wordmark in the upper-left corner with the complete new logo from input image 2. The new logo is a dark rounded square with an ivory C and an orange four-point signal spark, followed by the exact compyvila wordmark and orange period. Use the supplied shapes and typography, keep proportions intact, flat graphic treatment. Make the replacement about 300 pixels wide in a 1732-pixel-wide banner, within the original upper-left safe area. Keep the existing light wordmark treatment from input 2 so it contrasts with the background. Preserve ALL other artwork, large headline text, taglines, colors, lighting, textures, composition and landscape aspect ratio unchanged. Do not add any additional text. Do not change the illustration."
+    }
+  ]
+}

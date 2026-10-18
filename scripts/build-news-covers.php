@@ -16,7 +16,9 @@ foreach ($articles as $i => $article) {
     imagefilledrectangle($im,790,0,1199,629,$accent);
     imagefilledellipse($im,1170,25,480,480,$bright);
     imagefilledellipse($im,1200,610,470,470,$ink);
-    imagettftext($im,28,0,60,78,$ink,$font,'compyvila.');
+    $logo=imagecreatefrompng($root.'/public/assets/compyvila-logo-v3.png');
+    $logoHeight=(int) round(250*imagesy($logo)/imagesx($logo));
+    imagecopyresampled($im,$logo,60,40,0,0,250,$logoHeight,imagesx($logo),imagesy($logo));
     imagettftext($im,15,0,60,142,$accent,$font,$article['cover_kicker']);
     foreach ($article['cover_lines'] as $j=>$line) {
         imagettftext($im,43,0,60,292+$j*75,$ink,$font,$line);

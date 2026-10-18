@@ -2,11 +2,11 @@
     $origin = rtrim(config('app.url'), '/');
     $canonical = $origin.($path === '/' ? '/' : $path);
     $hasArticleImage = $article && $article['image'];
-    $preview = \App\Support\SocialPreview::image($hasArticleImage ? $article['image'] : null);
+    $preview = $socialPreview ?? \App\Support\SocialPreview::image($hasArticleImage ? $article['image'] : null);
     $shareImage = $preview['url'];
     $imageType = $preview['type'];
     $shareTitle = $title.' — Compyvila';
-    $imageAlt = $hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.';
+    $imageAlt = $socialImageAlt ?? ($hasArticleImage ? $article['title'].' — Compyvila article illustration' : 'Compyvila — Crypto, with perspective. Markets, analysis, and updates, with an orange glass Bitcoin lens.');
 @endphp
 <link rel="canonical" href="{{ $canonical }}">
 <meta property="og:site_name" content="Compyvila">

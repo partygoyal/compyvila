@@ -1,0 +1,9 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "ads-marketing",
+  "prompt": "Use case: brand-editorial-illustration. Asset type: Open Graph social sharing banner for Compyvila Creator Network. Create a polished creative wide landscape graphic at approximately 1.905:1 (1200x630 composition). Warm ivory background #F8F7F2, deep aubergine #27223C, electric purple, vibrant orange #F15A24, lime #D8FF8E. Left 55%: clean bold beautifully typeset large readable exact headline \"CREATOR NETWORK\" on two lines, above it smaller exact brand wordmark \"compyvila.\" in lower case dark charcoal with orange period. Below headline short exact supporting text \"Your voice. Bigger possibilities.\" Bottom left small exact \"compyvila.com/creator-network\". Right 45%: inventive dimensional paper and glass sculpture of three connected floating rounded cards, a microphone, play button and star symbol, connected by curved ribbons and orbit lines representing creator voices meeting brands. Purple glass, orange matte, lime tactile shapes, elegant soft studio shadows, premium editorial design and bright optimistic mood. Keep all text and objects comfortably inside 70px safe margins. Sparse composition, legible at small social-preview size. Do not show money, banknotes, fake brand logos, statistics, token prices, or income promises. No extra words, no watermarks, no portraits.",
+  "source": "/Users/partyushgoyal/.codex/generated_images/01a13aaf-fcf7-7cf1-82ef-34bffc1e43c9/exec-0aa17408-f2e9-467a-a8b1-b95a7b10f895.png",
+  "asset": "public/assets/social/creator-network-v1.jpg",
+  "width": 1200,
+  "height": 630
+}

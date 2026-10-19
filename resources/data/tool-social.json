@@ -1,0 +1,93 @@
+{
+  "profit-loss": {
+    "path": "/assets/social/tools/profit-loss-v1.jpg",
+    "alt": "Crypto Profit & Loss Calculator — See your net return after fees. Includes ROI and break-even price. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 64004
+  },
+  "average-buy-price": {
+    "path": "/assets/social/tools/average-buy-price-v1.jpg",
+    "alt": "Average Buy Price Calculator — Combine purchases and fees. Find your weighted cost per token. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 61067
+  },
+  "position-size": {
+    "path": "/assets/social/tools/position-size-v1.jpg",
+    "alt": "Crypto Position Size Calculator — Set a risk budget and stop price. Calculate your planned position size. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 66229
+  },
+  "market-cap-fdv": {
+    "path": "/assets/social/tools/market-cap-fdv-v1.jpg",
+    "alt": "Market Cap & FDV Calculator — Compare circulating market value with a diluted supply assumption. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 65784
+  },
+  "bitcoin-unit-converter": {
+    "path": "/assets/social/tools/bitcoin-unit-converter-v1.jpg",
+    "alt": "BTC to Satoshi Converter — Convert BTC, mBTC and sats. Exact units. No rounding surprises. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 65502
+  },
+  "ethereum-unit-converter": {
+    "path": "/assets/social/tools/ethereum-unit-converter-v1.jpg",
+    "alt": "ETH, Gwei & Wei Converter — Convert Ethereum units exactly. Keep every wei with full precision. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 61233
+  },
+  "gas-fee": {
+    "path": "/assets/social/tools/gas-fee-v1.jpg",
+    "alt": "Ethereum Gas Fee Calculator — Estimate execution fees in ETH. Add your ETH price for a USD estimate. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 67099
+  },
+  "staking-rewards": {
+    "path": "/assets/social/tools/staking-rewards-v1.jpg",
+    "alt": "Staking Rewards Simulator — Explore hypothetical token rewards. Compare APR and compounding. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 63122
+  },
+  "portfolio-allocation": {
+    "path": "/assets/social/tools/portfolio-allocation-v1.jpg",
+    "alt": "Crypto Portfolio Allocation Calculator — Compare current weights with targets. Plan your buy and sell adjustments. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 72496
+  },
+  "token-vesting": {
+    "path": "/assets/social/tools/token-vesting-v1.jpg",
+    "alt": "Token Vesting Calculator — Model cliffs and linear unlocks. See locked and unlocked tokens. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 61157
+  },
+  "creator-campaign-planner": {
+    "path": "/assets/social/tools/creator-campaign-planner-v1.jpg",
+    "alt": "Creator Campaign Pricing Planner — Build a quote from your own rates. Include rights, expenses and fees. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 68878
+  },
+  "directory": {
+    "path": "/assets/social/tools/directory-v1.jpg",
+    "alt": "Free Crypto Tools & Calculators — 11 tools for trades, tokens and planning. Free to use. No account needed. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 74056
+  },
+  "quiz": {
+    "path": "/assets/social/tools/quiz-v1.jpg",
+    "alt": "Crypto Quiz — 10 questions. How much do you know? Learn with explanations after each answer. Compyvila.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 58982
+  }
+}

@@ -13,9 +13,13 @@ class ToolsTest extends TestCase
     public function test_directory_and_each_tool_are_public_indexable_and_linked(): void
     {
         $this->seed();
-        $this->assertCount(12, ToolCatalog::all());
+        config(['app.url' => 'https://compyvila.com']);
+        $this->assertCount(11, ToolCatalog::all());
         $directory = $this->get('/tools')->assertOk()->assertSee('A clearer picture.');
-        $sitemap = $this->get('/sitemap.xml')->assertOk();
+        $directory->assertDontSee('data-calculator="crypto-knowledge-quiz"', false)->assertDontSee('href="/tools/crypto-knowledge-quiz"', false);
+        $this->get('/tools/crypto-knowledge-quiz')->assertStatus(301)->assertRedirect('/quiz');
+        $this->get('/quiz')->assertOk()->assertSee('id="quiz"', false)->assertSee('href="https://compyvila.com/quiz"', false)->assertSee('nav-quiz active')->assertSee('/assets/tools.js');
+        $sitemap = $this->get('/sitemap.xml')->assertOk()->assertSee('/quiz')->assertDontSee('/tools/crypto-knowledge-quiz');
         foreach (ToolCatalog::all() as $tool) {
             $path = '/tools/'.$tool['slug'];
             $directory->assertSee('href="'.$path.'"', false);

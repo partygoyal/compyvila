@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class PublicationController extends Controller
 {
     private const TITLES = [
-        '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
+        '/quiz' => 'Crypto Knowledge Quiz', '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
         '/analysis' => 'Look beyond the price.', '/bitcoin' => 'The original. Still evolving.',
         '/ethereum' => 'The programmable frontier.', '/altcoins' => 'Explore the wider ecosystem.',
         '/learn' => 'Understanding starts here.', '/calendar' => 'Know what’s ahead.',

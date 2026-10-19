@@ -460,17 +460,6 @@
     "rows": null
   },
   {
-    "slug": "crypto-knowledge-quiz",
-    "title": "Crypto Knowledge Quiz",
-    "group": "Learn",
-    "summary": "Test your understanding of wallets, fees and crypto fundamentals.",
-    "fields": [],
-    "formula": "Choose one answer for each question. Each correct answer earns one point.",
-    "note": "Educational questions cover general concepts. Never enter wallet secrets into a quiz or calculator.",
-    "example": "Review an explanation after every answer, then restart to try again.",
-    "rows": null
-  },
-  {
     "slug": "creator-campaign-planner",
     "title": "Creator Campaign Planner",
     "group": "Creators",

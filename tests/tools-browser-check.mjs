@@ -56,9 +56,9 @@ try {
   await mkdir('storage', { recursive: true });
 
   const catalog=JSON.parse(await readFile('resources/data/tools.json','utf8'));
-  for(const width of [1440,1150,1024,768,390,320]){
+  for(const width of [1440,1280,1200,1024,768,390,320]){
     await call('Emulation.setDeviceMetricsOverride',{width,height:1100,deviceScaleFactor:1,mobile:width<700});
-    for(const path of ['/tools',...catalog.map(t=>'/tools/'+t.slug)]){
+    for(const path of ['/tools',...catalog.map(t=>'/tools/'+t.slug),'/quiz']){
       await navigate(path);
       assert(await evaluate('document.documentElement.scrollWidth <= innerWidth'),`${path} fits ${width}px`);
       if(path!='/tools')assert(await evaluate(`!document.querySelector('.tool-error') && (!!document.querySelector('.tool-metric') || !!document.querySelector('.quiz-option'))`),`${path} initializes at ${width}px`);
@@ -67,6 +67,8 @@ try {
     }
   }
   await navigate('/tools');
+  assert(await evaluate(`document.querySelectorAll('[data-tool-card]').length===11 && !document.querySelector('[data-tool-card][href*="quiz"]')`),'Quiz is separate from the eleven tools');
+  assert(await evaluate(`document.querySelector('#navigation [href="/tools"]').textContent==='Free Crypto Tools' && document.querySelector('#navigation [href="/quiz"]').classList.contains('nav-quiz')`),'Renamed tools and highlighted quiz links');
   await evaluate(`document.querySelector('#tool-search').value='gas';document.querySelector('#tool-search').dispatchEvent(new Event('input'))`);
   assert(await evaluate(`document.querySelectorAll('[data-tool-card]:not([hidden])').length===1`),'Directory search works');
   await evaluate(`document.querySelector('[data-tool-filter="Creators"]').click()`);
@@ -87,7 +89,8 @@ try {
   await navigate('/tools/ethereum-unit-converter');
   await evaluate(`document.querySelector('[name="amount"]').value='0.000000000000000001';document.querySelector('#calculator').requestSubmit()`);
   assert(await evaluate(`Array.from(document.querySelectorAll('.tool-metric')).at(-1).textContent==='wei1'`),'Exact one-wei conversion in browser');
-  await navigate('/tools/crypto-knowledge-quiz');
+  await navigate('/quiz');
+  assert(await evaluate(`document.querySelector('link[rel="canonical"]').href.endsWith('/quiz') && document.querySelector('#navigation [href="/quiz"]').classList.contains('active')`),'Standalone quiz canonical and navigation');
   const correct=[0,1,2,0,1,1,0,2,1,0];
   for(const answer of correct){await evaluate(`document.querySelectorAll('.quiz-option')[${answer}].click();document.querySelector('#quiz > button').click()`);}
   assert(await evaluate(`document.querySelector('.quiz-score').textContent==='10 / 10'`),'Quiz scores all ten answers');

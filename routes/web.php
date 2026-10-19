@@ -7,6 +7,8 @@ Route::get('/', [PublicationController::class, 'home'])->name('home');
 Route::get('/read/{slug}', [PublicationController::class, 'article'])->name('articles.show');
 Route::get('/creator-network', [\App\Http\Controllers\CreatorController::class, 'index'])->name('creators.index');
 Route::post('/creator-network', [\App\Http\Controllers\CreatorController::class, 'store'])->middleware('throttle:5,1')->name('creators.store');
+Route::get('/quiz', [\App\Http\Controllers\ToolController::class, 'quiz'])->name('quiz');
+Route::redirect('/tools/crypto-knowledge-quiz', '/quiz', 301);
 Route::get('/tools', [\App\Http\Controllers\ToolController::class, 'index'])->name('tools.index');
 Route::get('/tools/{slug}', [\App\Http\Controllers\ToolController::class, 'show'])->name('tools.show');
 Route::get('/calendar', [PublicationController::class, 'calendar'])->name('calendar');

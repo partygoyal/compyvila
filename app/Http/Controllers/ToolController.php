@@ -9,7 +9,12 @@ class ToolController extends Controller
 {
     public function index(): View
     {
-        return view('tools.index', ['title' => 'Free Crypto Tools & Calculators', 'description' => 'Twelve free browser-based crypto calculators, converters and planning tools. Manual inputs, no API or account required.', 'tools' => ToolCatalog::all()]);
+        return view('tools.index', ['title' => 'Free Crypto Tools & Calculators', 'description' => 'Eleven free browser-based crypto calculators, converters and planning tools. Manual inputs, no API or account required.', 'tools' => ToolCatalog::all()]);
+    }
+
+    public function quiz(): View
+    {
+        return view('quiz', ['title' => 'Crypto Knowledge Quiz', 'description' => 'Test your crypto knowledge with ten free interactive questions about Bitcoin, wallets, Ethereum and token fundamentals. Get an explanation after every answer.']);
     }
 
     public function show(string $slug): View

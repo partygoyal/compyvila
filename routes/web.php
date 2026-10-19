@@ -11,6 +11,9 @@ Route::get('/quiz', [\App\Http\Controllers\ToolController::class, 'quiz'])->name
 Route::redirect('/tools/crypto-knowledge-quiz', '/quiz', 301);
 Route::get('/tools', [\App\Http\Controllers\ToolController::class, 'index'])->name('tools.index');
 Route::get('/tools/{slug}', [\App\Http\Controllers\ToolController::class, 'show'])->name('tools.show');
+Route::get('/funding', [\App\Http\Controllers\FundingController::class, 'index'])->name('funding.index');
+Route::post('/funding/submit', [\App\Http\Controllers\FundingController::class, 'submit'])->middleware('throttle:5,1')->name('funding.submit');
+Route::get('/funding/{slug}', [\App\Http\Controllers\FundingController::class, 'show'])->name('funding.show');
 Route::get('/calendar', [PublicationController::class, 'calendar'])->name('calendar');
 Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{slug}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
@@ -27,6 +30,14 @@ Route::post('/media-enquiry', [EnquiryController::class, 'store'])->middleware('
 Route::get('/admin/login', [AuthController::class, 'create'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'store'])->name('admin.login.store');
 Route::prefix('admin')->name('admin.')->middleware('editorial')->group(function () {
+    Route::get('/funding', [\App\Http\Controllers\Admin\FundingController::class, 'index'])->name('funding.index');
+    Route::get('/funding/round', [\App\Http\Controllers\Admin\FundingController::class, 'edit'])->name('funding.edit');
+    Route::post('/funding/round', [\App\Http\Controllers\Admin\FundingController::class, 'save'])->name('funding.save');
+    Route::delete('/funding/round/{round}', [\App\Http\Controllers\Admin\FundingController::class, 'destroy'])->whereNumber('round')->name('funding.delete');
+    Route::get('/funding/startup', [\App\Http\Controllers\Admin\FundingController::class, 'startupEdit'])->name('funding.startup.edit');
+    Route::post('/funding/startup', [\App\Http\Controllers\Admin\FundingController::class, 'startupSave'])->name('funding.startup.save');
+    Route::match(['get','patch'], '/funding/submissions/{submission}', [\App\Http\Controllers\Admin\FundingController::class, 'submission'])->whereNumber('submission')->name('funding.submission');
+    Route::delete('/funding/submissions/{submission}', [\App\Http\Controllers\Admin\FundingController::class, 'deleteSubmission'])->whereNumber('submission')->name('funding.submission.delete');
     Route::get('/creators', [\App\Http\Controllers\Admin\CreatorController::class, 'index'])->name('creators.index');
     Route::get('/creators/{creator}', [\App\Http\Controllers\Admin\CreatorController::class, 'show'])->whereNumber('creator')->name('creators.show');
     Route::patch('/creators/{creator}', [\App\Http\Controllers\Admin\CreatorController::class, 'update'])->whereNumber('creator')->name('creators.update');

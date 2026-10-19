@@ -1,0 +1,732 @@
+{
+  "startups": [
+    {
+      "slug": "turnkey",
+      "name": "Turnkey",
+      "sector": "Infrastructure",
+      "description": "Developer infrastructure for key management, embedded wallets and programmable signing across crypto applications.",
+      "website": "https://www.turnkey.com"
+    },
+    {
+      "slug": "privy",
+      "name": "Privy",
+      "sector": "Infrastructure",
+      "description": "An embedded-wallet and onboarding platform that helps developers add crypto accounts and transactions to applications.",
+      "website": "https://privy.io"
+    },
+    {
+      "slug": "miden",
+      "name": "Miden",
+      "sector": "Infrastructure",
+      "description": "A blockchain project using local execution and proof-based verification to support scalable public and private transactions.",
+      "website": "https://miden.xyz"
+    },
+    {
+      "slug": "redotpay",
+      "name": "RedotPay",
+      "sector": "Payments",
+      "description": "A stablecoin-focused payments business offering digital-asset spending, card and cross-border payout services.",
+      "website": "https://www.redotpay.com"
+    },
+    {
+      "slug": "rain",
+      "name": "Rain",
+      "sector": "Payments",
+      "description": "Stablecoin payment infrastructure for businesses launching card, wallet and money-movement services.",
+      "website": "https://www.rain.xyz"
+    },
+    {
+      "slug": "mesh",
+      "name": "Mesh",
+      "sector": "Payments",
+      "description": "Infrastructure connecting wallets, exchanges and payment services so digital assets can be used for payments and settlement.",
+      "website": "https://www.meshpay.com"
+    },
+    {
+      "slug": "fission",
+      "name": "Fission",
+      "sector": "RWA",
+      "description": "Blockchain-enabled infrastructure intended to improve liquidity for tokenized investment funds and private-market assets.",
+      "website": ""
+    },
+    {
+      "slug": "kast",
+      "name": "KAST",
+      "sector": "Payments",
+      "description": "A financial-services platform built around stablecoin accounts, spending and cross-border money movement.",
+      "website": ""
+    },
+    {
+      "slug": "project-eleven",
+      "name": "Project Eleven",
+      "sector": "Security",
+      "description": "Security infrastructure and migration tools addressing the implications of quantum computing for digital assets.",
+      "website": "https://www.projecteleven.com"
+    },
+    {
+      "slug": "mesta",
+      "name": "Mesta",
+      "sector": "Payments",
+      "description": "A cross-border payment network combining fiat payment corridors with stablecoin settlement.",
+      "website": ""
+    },
+    {
+      "slug": "raise",
+      "name": "Raise",
+      "sector": "Payments",
+      "description": "A gift-card and loyalty business developing blockchain-based payment and consumer-engagement products.",
+      "website": ""
+    },
+    {
+      "slug": "digital-asset",
+      "name": "Digital Asset",
+      "sector": "Infrastructure",
+      "description": "The company behind Canton Network, building blockchain infrastructure for institutional financial applications.",
+      "website": ""
+    },
+    {
+      "slug": "walrus",
+      "name": "Walrus",
+      "sector": "Infrastructure",
+      "description": "A decentralized storage protocol developed by Mysten Labs for storing data and supporting programmable storage applications.",
+      "website": "https://www.walrus.xyz"
+    },
+    {
+      "slug": "boundary-labs",
+      "name": "Boundary Labs",
+      "sector": "Payments",
+      "description": "A startup developing verifiable stablecoin infrastructure for financial institutions and approved participants.",
+      "website": ""
+    },
+    {
+      "slug": "octane",
+      "name": "Octane",
+      "sector": "Security",
+      "description": "An AI-assisted security startup focused on detecting vulnerabilities in blockchain software and smart contracts.",
+      "website": ""
+    },
+    {
+      "slug": "rena-labs",
+      "name": "Rena Labs",
+      "sector": "AI & Data",
+      "description": "Middleware for trusted execution environments intended to support private and verifiable AI applications.",
+      "website": ""
+    },
+    {
+      "slug": "multiliquid",
+      "name": "Multiliquid / Uniform Labs",
+      "sector": "RWA",
+      "description": "An institutional liquidity protocol developed by Uniform Labs for moving between tokenized investments and stablecoins.",
+      "website": ""
+    },
+    {
+      "slug": "credit-coop",
+      "name": "Credit Coop",
+      "sector": "DeFi",
+      "description": "A lending protocol using business cash flows as collateral for blockchain-based credit products.",
+      "website": ""
+    }
+  ],
+  "rounds": [
+    {
+      "startup_slug": "turnkey",
+      "slug": "turnkey-series-b-2025-06-09",
+      "announced_on": "2025-06-09",
+      "stage": "Series B",
+      "type": "Venture",
+      "amount_usd": 30000000,
+      "lead_investors": [
+        "Bain Capital Crypto"
+      ],
+      "other_investors": [
+        "Sequoia Capital",
+        "Lightspeed Faction",
+        "Galaxy Ventures",
+        "Wintermute Ventures",
+        "Variant"
+      ],
+      "summary": "Turnkey announced a Series B to expand its infrastructure for managing keys and signing transactions. The company said the capital would support hiring, open-source work and integrations for payments, DeFi and other onchain applications.",
+      "sources": [
+        "https://www.turnkey.com/blog/30m-series-b-to-secure-the-next-era-of-crypto"
+      ],
+      "source_notes": "The $30 million is this round\u2019s amount. The announcement separately described lifetime funding of more than $50 million.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "privy",
+      "slug": "privy-undisclosed-2025-03-19",
+      "announced_on": "2025-03-19",
+      "stage": "Undisclosed",
+      "type": "Venture",
+      "amount_usd": null,
+      "lead_investors": [
+        "Ribbit Capital"
+      ],
+      "other_investors": [
+        "Sequoia Capital",
+        "Paradigm",
+        "BlueYard",
+        "Coinbase"
+      ],
+      "summary": "Privy announced new backing led by Ribbit Capital for its embedded-wallet infrastructure. Its own announcement named returning investors and said the company had raised more than $40 million cumulatively, without specifying the latest round\u2019s amount.",
+      "sources": [
+        "https://privy.io/blog/announcing-our-fundraise-led-by-ribbit-capital"
+      ],
+      "source_notes": "Amount and stage are left undisclosed because the cited primary announcement does not give a standalone round amount or series label. The cumulative figure is not entered as this round\u2019s funding.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "miden",
+      "slug": "miden-seed-2025-04-29",
+      "announced_on": "2025-04-29",
+      "stage": "Seed",
+      "type": "Venture",
+      "amount_usd": 25000000,
+      "lead_investors": [
+        "a16z crypto",
+        "1kx",
+        "Hack VC"
+      ],
+      "other_investors": [
+        "Finality Capital Partners",
+        "Symbolic Capital",
+        "P2 Ventures",
+        "Delta Fund",
+        "MH Ventures"
+      ],
+      "summary": "Polygon Labs announced Miden\u2019s graduation from its incubation program alongside a seed financing. The announcement described a blockchain focused on public and private transactions, with founders moving the project into an independently funded business.",
+      "sources": [
+        "https://www.polygon.technology/blog/miden-raises-25m-from-a16z-crypto-1kx-and-hackvc-to-build-the-edge-blockchain"
+      ],
+      "source_notes": "The source is Polygon Labs, the incubating organisation. This is a funding announcement, not a mainnet launch date.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "redotpay",
+      "slug": "redotpay-series-a-2025-03-14",
+      "announced_on": "2025-03-14",
+      "stage": "Series A",
+      "type": "Venture",
+      "amount_usd": 40000000,
+      "lead_investors": [
+        "Lightspeed"
+      ],
+      "other_investors": [
+        "HSG",
+        "Galaxy Ventures",
+        "DST Global Partners",
+        "Accel",
+        "Vertex Ventures"
+      ],
+      "summary": "RedotPay announced a Series A to develop its payment products and expand its geographic reach. The company identified Lightspeed as the lead and described plans to invest in compliance, licensing and the customer payment experience.",
+      "sources": [
+        "https://www.redotpay.com/news/redotpay-secures-40-million-series-a-funding-to-accelerate-global-crypto-payment-solutions"
+      ],
+      "source_notes": "The public announcement is dated March 14, 2025; it refers to a Lightspeed commitment made in December 2024.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "redotpay",
+      "slug": "redotpay-strategic-2025-09-25",
+      "announced_on": "2025-09-25",
+      "stage": "Strategic",
+      "type": "Venture",
+      "amount_usd": 47000000,
+      "lead_investors": [],
+      "other_investors": [
+        "Coinbase Ventures",
+        "Galaxy Ventures",
+        "Vertex Ventures"
+      ],
+      "summary": "RedotPay announced a strategic investment with Coinbase Ventures joining existing backers. It said the capital would support payment corridors, partner relationships and licensing work. The round is tracked separately from the company\u2019s earlier Series A and subsequent Series B.",
+      "sources": [
+        "https://www.redotpay.com/news/redotpay-achieves-unicorn-status-with-47m-strategic-investment"
+      ],
+      "source_notes": "The release names participating investors but does not explicitly identify a lead. It claims unicorn status without an exact valuation, so no valuation amount is inferred.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "redotpay",
+      "slug": "redotpay-series-b-2025-12-16",
+      "announced_on": "2025-12-16",
+      "stage": "Series B",
+      "type": "Venture",
+      "amount_usd": 107000000,
+      "lead_investors": [
+        "Goodwater Capital"
+      ],
+      "other_investors": [
+        "Pantera Capital",
+        "Blockchain Capital",
+        "Circle Ventures",
+        "HSG"
+      ],
+      "summary": "RedotPay announced a Series B for product development, acquisitions, licensing and international expansion. This round followed two other 2025 financings; the company\u2019s stated annual funding total includes those earlier rounds rather than representing additional capital in this announcement.",
+      "sources": [
+        "https://www.redotpay.com/news/redotpay-raises-us107m-in-series-b-to-drive-stablecoin-payments-adoption-globally"
+      ],
+      "source_notes": "Use $107 million for this round, not the $194 million cumulative amount raised during 2025.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "rain",
+      "slug": "rain-series-a-2025-03-24",
+      "announced_on": "2025-03-24",
+      "stage": "Series A",
+      "type": "Venture",
+      "amount_usd": 24500000,
+      "lead_investors": [
+        "Norwest Venture Partners"
+      ],
+      "other_investors": [
+        "Galaxy Ventures",
+        "Goldcrest",
+        "Thayer",
+        "Hard Yaka"
+      ],
+      "summary": "Rain announced financing for stablecoin-linked card infrastructure. Its later industry-association profile identifies this as the March 2025 Series A. The company\u2019s subsequent Series B and Series C are separate announcements in this tracker.",
+      "sources": [
+        "https://theblockchainassociation.org/posts/blockchain-association-member-spotlight--rain",
+        "https://fortune.com/crypto/2025/03/24/crypto-card-rain-funding-norwest-venture-partners/"
+      ],
+      "source_notes": "The association\u2019s member profile confirms the March Series A amount and sequence. The contemporaneous report establishes March 24 as the announcement date.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "rain",
+      "slug": "rain-series-b-2025-08-28",
+      "announced_on": "2025-08-28",
+      "stage": "Series B",
+      "type": "Venture",
+      "amount_usd": 58000000,
+      "lead_investors": [
+        "Sapphire Ventures"
+      ],
+      "other_investors": [
+        "Dragonfly",
+        "Galaxy Ventures",
+        "Endeavor Catalyst",
+        "Samsung Next",
+        "Lightspeed",
+        "Norwest"
+      ],
+      "summary": "Rain announced a Series B to develop enterprise stablecoin payment infrastructure. It described the capital as supporting product capabilities and expansion, following its Series A earlier in the same year.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/rain-raises-58m-series-b-led-by-sapphire-ventures-to-become-the-enterprise-stablecoin-platform-of-record-302540587.html"
+      ],
+      "source_notes": "This is the $58 million round; the release\u2019s $88.5 million figure is cumulative funding.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "rain",
+      "slug": "rain-series-c-2026-01-09",
+      "announced_on": "2026-01-09",
+      "stage": "Series C",
+      "type": "Venture",
+      "amount_usd": 250000000,
+      "lead_investors": [
+        "ICONIQ"
+      ],
+      "other_investors": [
+        "Sapphire Ventures",
+        "Dragonfly",
+        "Bessemer Venture Partners",
+        "Galaxy Ventures",
+        "FirstMark",
+        "Lightspeed",
+        "Norwest",
+        "Endeavor Catalyst"
+      ],
+      "summary": "Rain announced a Series C to expand the geographic reach and product capabilities of its stablecoin payment infrastructure. The release also disclosed a company valuation, which is recorded separately from the new funding amount.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/rain-sammelt-250-millionen-dollar-in-der-serie-c-fur-die-skalierung-der-stablecoin-gestutzten-zahlungsinfrastruktur-fur-globale-unternehmen-302657614.html"
+      ],
+      "source_notes": "The cited Rain-issued release is a German-language distribution dated January 9. Its valuation basis is not explicitly labelled pre- or post-money here.",
+      "valuation_usd": 1950000000,
+      "valuation_basis": "Unspecified"
+    },
+    {
+      "startup_slug": "mesh",
+      "slug": "mesh-series-b-2025-03-11",
+      "announced_on": "2025-03-11",
+      "stage": "Series B",
+      "type": "Venture",
+      "amount_usd": 82000000,
+      "lead_investors": [
+        "Paradigm"
+      ],
+      "other_investors": [
+        "Consensys",
+        "QuantumLight Capital",
+        "Yolo Investments"
+      ],
+      "summary": "Mesh announced a Series B to scale its crypto payment network and stablecoin settlement capabilities. The company said the funding would support infrastructure and commercial partnerships as it connected payment services with wallets and exchanges.",
+      "sources": [
+        "https://www.meshpay.com/blog/mesh-raises-82m-to-build-the-future-of-crypto-payments"
+      ],
+      "source_notes": "The $82 million round is distinct from the announcement\u2019s cumulative funding of more than $120 million.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "mesh",
+      "slug": "mesh-series-c-2026-01-27",
+      "announced_on": "2026-01-27",
+      "stage": "Series C",
+      "type": "Venture",
+      "amount_usd": 75000000,
+      "lead_investors": [
+        "Dragonfly Capital"
+      ],
+      "other_investors": [
+        "Paradigm",
+        "Moderne Ventures",
+        "Coinbase Ventures",
+        "SBI Investment",
+        "Liberty City Ventures"
+      ],
+      "summary": "Mesh announced a Series C for scaling its crypto payment network and expanding internationally. Its own announcement reported a $1 billion valuation and total funding exceeding $200 million; the newly raised amount was $75 million.",
+      "sources": [
+        "https://www.meshpay.com/blog/mesh-raises-75m-series-c-at-1b-valuation"
+      ],
+      "source_notes": "The company disclosed a valuation without explicitly identifying its pre- or post-money basis.",
+      "valuation_usd": 1000000000,
+      "valuation_basis": "Unspecified"
+    },
+    {
+      "startup_slug": "fission",
+      "slug": "fission-series-a-2026-10-15",
+      "announced_on": "2026-10-15",
+      "stage": "Series A",
+      "type": "Venture",
+      "amount_usd": 10000000,
+      "lead_investors": [
+        "Pantera Capital"
+      ],
+      "other_investors": [
+        "Circle Ventures",
+        "New Form",
+        "gumi Cryptos Capital",
+        "Borderless Capital",
+        "Ari Rubenstein"
+      ],
+      "summary": "Fission announced a Series A to increase liquidity capacity for tokenized funds and broaden its integrations. The company positioned the funding around reducing frictions that arise when digital investment products rely on slower redemption and settlement processes.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/fission-raises-10m-series-a-led-by-pantera-capital-to-bring-liquidity-to-digital-private-markets-302908670.html"
+      ],
+      "source_notes": "Company-issued release distributed by PR Newswire. Descriptions of product activity are the company\u2019s statements, not independently audited metrics.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "kast",
+      "slug": "kast-series-a-2026-03-09",
+      "announced_on": "2026-03-09",
+      "stage": "Series A",
+      "type": "Venture",
+      "amount_usd": 80000000,
+      "lead_investors": [
+        "QED Investors",
+        "Left Lane Capital"
+      ],
+      "other_investors": [
+        "Peak XV Partners",
+        "HSG",
+        "DST Global Partners"
+      ],
+      "summary": "KAST announced a Series A co-led by QED Investors and Left Lane Capital. It said the financing would support product development, licensing and expansion across several regions as it developed financial services using stablecoin infrastructure.",
+      "sources": [
+        "https://www.prnewswire.co.uk/news-releases/kast-raises-80-million-as-stablecoins-move-from-infrastructure-into-mainstream-financial-services-302708236.html"
+      ],
+      "source_notes": "This listing uses the company\u2019s public March announcement rather than a reported earlier negotiation date. No valuation is inferred from outside reporting.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "project-eleven",
+      "slug": "project-eleven-series-a-2026-01-14",
+      "announced_on": "2026-01-14",
+      "stage": "Series A",
+      "type": "Venture",
+      "amount_usd": 20000000,
+      "lead_investors": [
+        "Castle Island Ventures"
+      ],
+      "other_investors": [
+        "Coinbase Ventures",
+        "Fin Capital",
+        "Variant",
+        "Quantonation",
+        "Nebular",
+        "Formation",
+        "Lattice Fund",
+        "Satstreet Ventures",
+        "Nascent Ventures"
+      ],
+      "summary": "Project Eleven announced a Series A for post-quantum digital-asset infrastructure. It described plans for readiness assessments, migration tooling and a product release, following an earlier seed financing. The round is a funding event, not a claim that quantum migration is complete.",
+      "sources": [
+        "https://www.prnewswire.com/in/news-releases/project-eleven-raises-20m-to-prepare-digital-asset-infrastructure-for-the-quantum-era-302660406.html"
+      ],
+      "source_notes": "The cited release is dated January 14; some regional distributions appeared January 15. The separate $6 million June 2025 seed is not counted in this round.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "mesta",
+      "slug": "mesta-seed-2025-09-30",
+      "announced_on": "2025-09-30",
+      "stage": "Seed",
+      "type": "Venture",
+      "amount_usd": 5500000,
+      "lead_investors": [
+        "Village Global"
+      ],
+      "other_investors": [
+        "Circle Ventures",
+        "Paxos",
+        "WTI",
+        "Garuda Ventures",
+        "Canonical Crypto",
+        "Everywhere Ventures",
+        "Inventum Ventures"
+      ],
+      "summary": "Mesta announced a seed financing to develop its cross-border payment network. The company said it would use the money to broaden payment features, strengthen its teams and extend the network\u2019s international reach.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/mesta-secures-5-5-million-seed-round-to-redefine-cross-border-payments-302571743.html"
+      ],
+      "source_notes": "",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "raise",
+      "slug": "raise-strategic-2025-02-26",
+      "announced_on": "2025-02-26",
+      "stage": "Strategic",
+      "type": "Venture",
+      "amount_usd": 63000000,
+      "lead_investors": [
+        "Haun Ventures"
+      ],
+      "other_investors": [
+        "Amber Group",
+        "Anagram",
+        "Blackpine",
+        "Borderless Capital",
+        "GSR",
+        "Karatage",
+        "Paper Ventures",
+        "Pharsalus Capital",
+        "Selini Capital",
+        "Sonic Boom Ventures",
+        "Web3 Foundation"
+      ],
+      "summary": "Raise announced strategic financing led by Haun Ventures to develop blockchain-powered gift-card and loyalty services. The stated round amount is separate from the business\u2019s cumulative financing, which the announcement described as exceeding $220 million.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/raise-secures-63-million-to-transform-the-payments-and-loyalty-industry-with-blockchain-powered-gift-cards-302385340.html"
+      ],
+      "source_notes": "",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "digital-asset",
+      "slug": "digital-asset-strategic-2025-06-24",
+      "announced_on": "2025-06-24",
+      "stage": "Strategic",
+      "type": "Venture",
+      "amount_usd": 135000000,
+      "lead_investors": [
+        "DRW Venture Capital",
+        "Tradeweb Markets"
+      ],
+      "other_investors": [
+        "BNP Paribas",
+        "Circle Ventures",
+        "Citadel Securities",
+        "DTCC",
+        "Goldman Sachs",
+        "IMC",
+        "Liberty City Ventures",
+        "Optiver",
+        "Paxos",
+        "Polychain Capital",
+        "QCP",
+        "Republic Digital",
+        "7RIDGE",
+        "Virtu Financial"
+      ],
+      "summary": "Digital Asset announced strategic financing from financial-market participants and crypto investors to support Canton Network adoption. The company described the round as capital for expanding blockchain-based financial infrastructure and institutional participation.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/digital-asset-raises-135-million-to-accelerate-adoption-of-canton-network-302488899.html"
+      ],
+      "source_notes": "Digital Asset is a later-stage private business, included alongside earlier-stage startups. Financing stage does not imply a recent founding date.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "walrus",
+      "slug": "walrus-undisclosed-2025-03-20",
+      "announced_on": "2025-03-20",
+      "stage": "Undisclosed",
+      "type": "Private token sale",
+      "amount_usd": 140000000,
+      "lead_investors": [
+        "Standard Crypto"
+      ],
+      "other_investors": [
+        "a16z crypto",
+        "Electric Capital",
+        "Creditcoin",
+        "Lvna Capital",
+        "Protagonist",
+        "Franklin Templeton Digital Assets",
+        "Karatage",
+        "RW3 Ventures",
+        "Comma3 Ventures",
+        "The Raptor Group"
+      ],
+      "summary": "Walrus Foundation announced private token financing for its storage network. The capital was intended for protocol maintenance, ecosystem growth and application development. Because this was a token sale, it is separated from the tracker\u2019s venture-funding total.",
+      "sources": [
+        "https://www.raptorgroup.com/news/walrus-foundation-secures-140m-in-fundraising-led-by-standard-crypto/",
+        "https://fortune.com/crypto/2025/03/20/walrus-fundraise-140-million-2-billion-andreessen-horowitz/"
+      ],
+      "source_notes": "Investor Raptor Group\u2019s announcement was posted March 21; contemporaneous coverage dates the announcement to March 20. This is a private token sale, not an equity Series A.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "boundary-labs",
+      "slug": "boundary-labs-pre-seed-2026-05-11",
+      "announced_on": "2026-05-11",
+      "stage": "Pre-seed",
+      "type": "Venture",
+      "amount_usd": 2000000,
+      "lead_investors": [
+        "Galaxy Ventures"
+      ],
+      "other_investors": [
+        "BlackWood",
+        "FirstBlock Capital"
+      ],
+      "summary": "Boundary Labs announced a pre-seed financing for its institutional stablecoin infrastructure. The release described plans to accelerate USBD development and make verifiability a central part of its proposed product design.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/boundary-labs-announces-2m-pre-seed-led-by-galaxy-ventures-to-launch-verifiable-institutional-stablecoin-usbd-302767720.html"
+      ],
+      "source_notes": "The announcement concerns development funding. A financing announcement alone does not establish present product availability.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "octane",
+      "slug": "octane-seed-2025-04-08",
+      "announced_on": "2025-04-08",
+      "stage": "Seed",
+      "type": "Venture",
+      "amount_usd": 6750000,
+      "lead_investors": [
+        "Archetype",
+        "Winklevoss Capital"
+      ],
+      "other_investors": [
+        "Gemini",
+        "Circle",
+        "Legion Capital",
+        "Druid Ventures",
+        "Duke Capital Partners"
+      ],
+      "summary": "Octane announced seed financing as it emerged from stealth. It described using machine learning to identify and help resolve vulnerabilities in blockchain code, with the investment supporting its security product and company development.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/octane-launches-from-stealth-raising-6-75m-to-build-ai-powered-cybersecurity-for-crypto-302423335.html"
+      ],
+      "source_notes": "",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "rena-labs",
+      "slug": "rena-labs-pre-seed-2025-01-09",
+      "announced_on": "2025-01-09",
+      "stage": "Pre-seed",
+      "type": "Venture",
+      "amount_usd": 3300000,
+      "lead_investors": [
+        "Paper Ventures"
+      ],
+      "other_investors": [
+        "Lightspeed Faction",
+        "Eterna Capital",
+        "Lyrik Ventures",
+        "Mapleblock Capital",
+        "Selini Capital",
+        "Keyrock"
+      ],
+      "summary": "Rena Labs announced pre-seed financing for its trusted-execution-environment middleware. The company said the funding would support technology development, recruitment and education around deploying privacy-oriented AI applications with blockchain infrastructure.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/rena-labs-secures-3-3m-funding-to-pioneer-trustless-on-chain-ai-solutions-302347061.html"
+      ],
+      "source_notes": "",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "multiliquid",
+      "slug": "multiliquid-seed-2026-10-15",
+      "announced_on": "2026-10-15",
+      "stage": "Seed",
+      "type": "Venture",
+      "amount_usd": null,
+      "lead_investors": [
+        "Polychain"
+      ],
+      "other_investors": [
+        "Strobe Ventures",
+        "CMT Digital",
+        "Metalayer Ventures",
+        "Generative Ventures",
+        "Circle Ventures"
+      ],
+      "summary": "Uniform Labs announced the close of a seed financing for Multiliquid, its tokenized-asset liquidity protocol. The release reported total funding of $8 million across financings, without specifying the amount attributable to the newly announced seed round.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/multiliquid-closes-seed-round-led-by-polychain-with-participation-from-strobe-ventures-cmt-digital-metalayer-ventures-generative-ventures-and-circle-ventures-bringing-total-funding-to-8-million-302910291.html"
+      ],
+      "source_notes": "The $8 million headline figure is cumulative funding. The current round amount is left Undisclosed and excluded from aggregate funding sums.",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    },
+    {
+      "startup_slug": "credit-coop",
+      "slug": "credit-coop-seed-2025-08-28",
+      "announced_on": "2025-08-28",
+      "stage": "Seed",
+      "type": "Venture",
+      "amount_usd": 4500000,
+      "lead_investors": [
+        "Maven 11",
+        "Lightspeed Faction"
+      ],
+      "other_investors": [
+        "Coinbase Ventures",
+        "Signature Ventures",
+        "Veris Ventures",
+        "TRGC",
+        "dlab"
+      ],
+      "summary": "Credit Coop announced a seed financing for its cash-flow-based credit infrastructure. It said the round would support engineering and business-development hiring as it expanded lending tools using programmable collateral and onchain settlement.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/credit-coop-announces-4-5-million-seed-funding-round-to-transform-credit-markets-302541410.html"
+      ],
+      "source_notes": "",
+      "valuation_usd": null,
+      "valuation_basis": "Undisclosed"
+    }
+  ]
+}

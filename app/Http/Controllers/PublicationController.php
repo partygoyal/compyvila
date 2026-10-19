@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class PublicationController extends Controller
 {
     private const TITLES = [
-        '/quiz' => 'Crypto Quiz', '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
+        '/funding' => 'Crypto Funding Tracker', '/quiz' => 'Crypto Quiz', '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
         '/analysis' => 'Look beyond the price.', '/bitcoin' => 'The original. Still evolving.',
         '/ethereum' => 'The programmable frontier.', '/altcoins' => 'Explore the wider ecosystem.',
         '/learn' => 'Understanding starts here.', '/calendar' => 'Know what’s ahead.',
@@ -127,6 +127,9 @@ class PublicationController extends Controller
         }
         foreach (Article::published()->get(['slug', 'updated_at']) as $article) {
             $urls[] = ['path' => '/read/'.$article->slug, 'modified' => \Illuminate\Support\Carbon::parse($article->updated_at)->toAtomString()];
+        }
+        foreach (\App\Models\FundingRound::published()->get(['slug','updated_at']) as $round) {
+            $urls[] = ['path' => '/funding/'.$round->slug, 'modified' => $round->updated_at->toAtomString()];
         }
         $urls[] = ['path' => '/projects', 'modified' => null];
         foreach (\App\Models\Project::published()->get(['slug', 'updated_at']) as $project) {

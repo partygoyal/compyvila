@@ -219,3 +219,9 @@ Artisan::command('compyvila:create-admin {email}', function () {
     $this->info('Save this password in your password manager.');
     return 0;
 })->purpose('Create an editorial administrator with a generated password');
+
+Artisan::command('compyvila:publish-funding {--publish : Insert missing sourced funding records}', function () {
+    $result=\App\Support\FundingPublisher::publish((bool)$this->option('publish'));
+    $this->info($result['validated'].' funding rounds validated; '.$result['created'].' created. Existing editorial records are preserved.');
+    return 0;
+})->purpose('Validate and publish the researched 2025–2026 funding tracker without overwriting edits');

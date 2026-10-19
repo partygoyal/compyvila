@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class PublicationController extends Controller
 {
     private const TITLES = [
-        '/quiz' => 'Crypto Knowledge Quiz', '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
+        '/quiz' => 'Crypto Quiz', '/tools' => 'Free Crypto Tools & Calculators', '/creator-network' => 'Join the Compyvila Creator Network', '/' => 'Crypto, with perspective.', '/news' => 'The latest, with context.',
         '/analysis' => 'Look beyond the price.', '/bitcoin' => 'The original. Still evolving.',
         '/ethereum' => 'The programmable frontier.', '/altcoins' => 'Explore the wider ecosystem.',
         '/learn' => 'Understanding starts here.', '/calendar' => 'Know what’s ahead.',
@@ -121,9 +121,9 @@ class PublicationController extends Controller
     public function sitemap()
     {
         $urls = collect(array_keys(self::TITLES))->reject(fn ($path) => in_array($path, ['/search', '/watchlist']))
-            ->map(fn ($path) => ['path' => $path, 'modified' => null])->values()->all();
+            ->map(fn ($path) => ['path' => $path, 'modified' => in_array($path, ['/tools', '/quiz']) ? \App\Support\ToolSeo::UPDATED_AT : null])->values()->all();
         foreach (\App\Support\ToolCatalog::all() as $tool) {
-            $urls[] = ['path' => '/tools/'.$tool['slug'], 'modified' => null];
+            $urls[] = ['path' => '/tools/'.$tool['slug'], 'modified' => \App\Support\ToolSeo::UPDATED_AT];
         }
         foreach (Article::published()->get(['slug', 'updated_at']) as $article) {
             $urls[] = ['path' => '/read/'.$article->slug, 'modified' => \Illuminate\Support\Carbon::parse($article->updated_at)->toAtomString()];

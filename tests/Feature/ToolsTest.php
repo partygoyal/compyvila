@@ -24,7 +24,7 @@ class ToolsTest extends TestCase
             $path = '/tools/'.$tool['slug'];
             $directory->assertSee('href="'.$path.'"', false);
             $sitemap->assertSee($path);
-            $response = $this->get($path)->assertOk()->assertSee($tool['title'])->assertSee($tool['formula'])
+            $response = $this->get($path)->assertOk()->assertSee(\App\Support\ToolSeo::content($tool['slug'])['title'])->assertSee($tool['formula'])
                 ->assertSee('type="module" src="/assets/tools.js', false)->assertDontSee('name="robots" content="noindex', false);
             $response->assertHeader('Content-Security-Policy');
         }

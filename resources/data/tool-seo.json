@@ -1,0 +1,428 @@
+{
+  "profit-loss": {
+    "title": "Crypto Profit & Loss Calculator with Fees",
+    "description": "Calculate crypto profit, loss, ROI and break-even sell price after trading fees. Enter buy price, sell price and token quantity. Free, no login.",
+    "answer": "Crypto profit is the amount left after subtracting the full purchase cost from net sale proceeds. A price increase can still produce a loss when fees exceed the gain. This calculator includes percentage fees on both sides and shows return on the original cost, total fees and the sell price needed to break even.",
+    "steps": [
+      "Enter the buy price and sell price in the same quote currency, such as USD or INR.",
+      "Enter the token quantity and the percentage fee charged on each trade. A 0.1% fee should be entered as 0.1.",
+      "Select Calculate. Compare net profit, return on cost and break-even price before changing your assumptions."
+    ],
+    "faq": [
+      {
+        "question": "How do I calculate crypto profit after fees?",
+        "answer": "Multiply quantity by buy price and add the buy fee. Multiply quantity by sell price and subtract the sell fee. Net profit is the second amount minus the first. ROI is that profit divided by the purchase cost, multiplied by 100."
+      },
+      {
+        "question": "Does this crypto calculator include tax?",
+        "answer": "No. It models one purchase and one sale with percentage trading fees. Tax treatment, cost-basis rules, funding, slippage and network fees need separate calculations."
+      },
+      {
+        "question": "Can I use this for any cryptocurrency?",
+        "answer": "Yes, provided the buy and sell prices use one consistent quote currency and you enter the same token quantity on both sides. It does not fetch prices or predict returns."
+      }
+    ],
+    "links": [
+      {
+        "title": "Understand liquidity and price impact",
+        "url": "/read/crypto-liquidity-vs-volume"
+      }
+    ]
+  },
+  "average-buy-price": {
+    "title": "Crypto Average Buy Price Calculator",
+    "description": "Find your average crypto purchase price across multiple buys, including fees. Add purchase rows to calculate total tokens and weighted cost per token.",
+    "answer": "The average buy price of a cryptocurrency is the total amount spent acquiring it divided by the number of tokens acquired. Purchases of different sizes need a quantity-weighted average, rather than a simple average of their prices. This tool also includes fixed purchase fees in the quote currency.",
+    "steps": [
+      "Add one row for each purchase of the same token.",
+      "Enter the token quantity, unit price and fee amount for each row. Use one quote currency throughout.",
+      "Calculate the combined holdings, total cost and average cost per token. Add or remove rows to compare purchases."
+    ],
+    "faq": [
+      {
+        "question": "Is average buy price the same as the average of my purchase prices?",
+        "answer": "Only when quantities are equal and fees do not change the result. Buying two tokens at 100 and one at 160 gives an average price of 120, not 130."
+      },
+      {
+        "question": "How are fees included in the average cost?",
+        "answer": "Each fee is added as a fixed amount to that purchase\u2019s quantity multiplied by price. The combined cost is then divided by total tokens. Fees are assumed to be paid separately rather than deducted from tokens."
+      },
+      {
+        "question": "Can I calculate my tax cost basis here?",
+        "answer": "This is a purchase-only planning estimate. It does not model sales, transfers, lots, FIFO or jurisdiction-specific tax accounting, so it should not be used as a tax record."
+      }
+    ],
+    "links": [
+      {
+        "title": "Calculate profit after a planned sale",
+        "url": "/tools/profit-loss"
+      }
+    ]
+  },
+  "position-size": {
+    "title": "Crypto Position Size Calculator: Risk & Stop Loss",
+    "description": "Calculate crypto position size from account balance, risk percentage, entry and stop price. Supports long and short trades with clear risk assumptions.",
+    "answer": "Position sizing converts a chosen loss budget into a token quantity. Divide the amount you are willing to risk by the distance between entry price and stop price. This tool supports long and short setups and shows position notional so you can compare exposure with account balance.",
+    "steps": [
+      "Enter your account balance and the percentage of it you choose to risk.",
+      "Choose long or short, then enter entry and stop prices in the same currency. A long stop is below entry; a short stop is above entry.",
+      "Calculate token quantity, planned loss at the stop and position notional. Account separately for fees, gaps and execution risk."
+    ],
+    "faq": [
+      {
+        "question": "What is the formula for crypto position size?",
+        "answer": "Token quantity equals account balance multiplied by risk percentage, divided by the absolute difference between entry and stop prices. Express the percentage as a fraction in the formula: 1% is 0.01."
+      },
+      {
+        "question": "Does a stop loss guarantee the calculated loss?",
+        "answer": "No. A stop order can execute at a worse price during gaps, fast markets or poor liquidity. The calculation assumes execution exactly at your stop and excludes fees and slippage."
+      },
+      {
+        "question": "Why can position notional exceed my balance?",
+        "answer": "A very narrow stop can imply a large position for the same risk budget. The tool reports that exposure but does not check purchasing power, leverage requirements, margin or liquidation."
+      }
+    ],
+    "links": [
+      {
+        "title": "Read about liquidity versus volume",
+        "url": "/read/crypto-liquidity-vs-volume"
+      }
+    ]
+  },
+  "market-cap-fdv": {
+    "title": "Crypto Market Cap & FDV Calculator",
+    "description": "Calculate crypto market cap, fully diluted valuation and circulating supply share from manual token price and supply inputs. Includes formulas and examples.",
+    "answer": "Crypto market capitalization multiplies token price by circulating supply. Fully diluted valuation, or FDV, uses a broader supply assumption at the same price. Comparing both can show how much assumed supply is outside circulation, but neither value measures cash invested or guarantees a future token price.",
+    "steps": [
+      "Enter a token price and its circulating supply.",
+      "Enter the total or maximum supply assumption you want to use for FDV, making sure it is at least the circulating supply.",
+      "Calculate market cap, FDV and circulating share. Verify the supply definition and any future unlocks separately."
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between market cap and FDV?",
+        "answer": "Market cap uses circulating supply; FDV uses your fully diluted supply assumption. Both multiply supply by the current price. FDV can therefore be much higher when many tokens are not yet circulating."
+      },
+      {
+        "question": "Should I use total supply or maximum supply for FDV?",
+        "answer": "Use the definition appropriate to the asset and the source you are comparing with, and state it clearly. Providers can use different conventions. This calculator deliberately labels the input as an assumption."
+      },
+      {
+        "question": "Does a high FDV mean the token will reach that market cap?",
+        "answer": "No. FDV keeps price constant while applying a different supply count. Prices, issuance, burns and demand can all change, so it is a comparison rather than a forecast."
+      }
+    ],
+    "links": [
+      {
+        "title": "Market cap vs FDV explained",
+        "url": "/read/market-cap-vs-fdv"
+      }
+    ]
+  },
+  "bitcoin-unit-converter": {
+    "title": "BTC to Satoshi Converter: BTC, mBTC & Sats",
+    "description": "Convert BTC, mBTC and satoshis exactly. One bitcoin equals 100 million sats. Free Bitcoin unit converter with full precision and no live price needed.",
+    "answer": "One bitcoin equals 100,000,000 satoshis, and one millibitcoin equals 100,000 satoshis. This converter translates BTC, mBTC and sats using integer arithmetic, preserving exact values instead of floating-point rounding. It converts units of bitcoin, not bitcoin into a fiat currency.",
+    "steps": [
+      "Enter a non-negative amount using plain decimal notation.",
+      "Choose whether the amount is in BTC, mBTC or satoshis.",
+      "Calculate all three units. Amounts containing fractions smaller than a satoshi are rejected instead of silently rounded."
+    ],
+    "faq": [
+      {
+        "question": "How many satoshis are in one bitcoin?",
+        "answer": "There are exactly 100,000,000 satoshis in one BTC. One satoshi is 0.00000001 BTC. One mBTC is 0.001 BTC, or 100,000 satoshis."
+      },
+      {
+        "question": "How do I convert sats to BTC?",
+        "answer": "Divide the number of satoshis by 100,000,000. For example, 50,000 sats equals 0.0005 BTC. No market price is needed because these units have a fixed relationship."
+      },
+      {
+        "question": "Does this converter support BTC to USD?",
+        "answer": "No. It converts Bitcoin units only. A BTC-to-USD conversion requires a separate price and timestamp. The tool also rejects scientific notation and fractional satoshi inputs."
+      }
+    ],
+    "links": [
+      {
+        "title": "Bitcoin units and divisibility \u2014 Bitcoin.org",
+        "url": "https://bitcoin.org/en/faq"
+      },
+      {
+        "title": "Bitcoin halving explained",
+        "url": "/read/bitcoin-halving-explained"
+      }
+    ]
+  },
+  "ethereum-unit-converter": {
+    "title": "ETH to Wei & Gwei Converter: Exact Ethereum Units",
+    "description": "Convert ETH, gwei and wei with exact integer precision. One ETH equals 1 billion gwei or 10^18 wei. Free converter with no API or login required.",
+    "answer": "One ether equals 1,000,000,000 gwei and 1,000,000,000,000,000,000 wei. Wei is the smallest integer unit used for ether amounts, while gwei is commonly used for gas prices. This converter preserves up to 18 decimal places of ETH and does not round away a single wei.",
+    "steps": [
+      "Enter an amount in plain decimal notation without commas or scientific notation.",
+      "Select ETH, gwei or wei as the input unit.",
+      "Calculate the exact equivalent in every unit. Use a whole number of wei; smaller fractions are not supported."
+    ],
+    "faq": [
+      {
+        "question": "How many wei are in one ETH?",
+        "answer": "One ETH equals 10^18 wei, written as 1,000,000,000,000,000,000. One gwei equals 1,000,000,000 wei, and one ETH equals 1,000,000,000 gwei."
+      },
+      {
+        "question": "Is gwei a separate cryptocurrency?",
+        "answer": "No. Gwei is a denomination of ether, just as cents are a denomination of a dollar. It is commonly used to express the price paid per unit of gas on Ethereum."
+      },
+      {
+        "question": "Why use exact integer conversion for wei?",
+        "answer": "Ordinary floating-point numbers cannot preserve every integer across the full range of typical wei amounts. This tool parses decimal strings into integers so the output retains exact atomic units."
+      }
+    ],
+    "links": [
+      {
+        "title": "Ether denominations \u2014 Ethereum.org",
+        "url": "https://ethereum.org/developers/docs/intro-to-ether/"
+      },
+      {
+        "title": "Estimate an Ethereum gas fee",
+        "url": "/tools/gas-fee"
+      }
+    ]
+  },
+  "gas-fee": {
+    "title": "Ethereum Gas Fee Calculator: Gwei to ETH & USD",
+    "description": "Estimate Ethereum transaction fees from gas used, base fee and priority fee. See costs in ETH and optional USD using your manually entered ETH price.",
+    "answer": "An Ethereum execution fee is estimated by multiplying gas used by the effective price per gas. In this tool, the effective price is the assumed base fee plus priority fee. Entering both in gwei lets the calculator show the total in ETH, with an optional USD estimate from your own ETH price.",
+    "steps": [
+      "Enter estimated gas used. A simple ETH transfer often uses 21,000, while contract interactions can use more.",
+      "Enter the assumed base and priority fees in gwei. These are manual estimates, not current network quotes.",
+      "Optionally enter an ETH price in USD. Calculate total fee and its base-fee and priority-fee components."
+    ],
+    "faq": [
+      {
+        "question": "What is the Ethereum gas fee formula?",
+        "answer": "Estimated execution fee in ETH equals gas used multiplied by base fee plus priority fee, divided by 1,000,000,000. For 21,000 gas and 22 gwei combined, the fee is 0.000462 ETH."
+      },
+      {
+        "question": "Is gas used the same as the gas limit?",
+        "answer": "No. Gas limit is the maximum allowed for execution; gas used is the amount actually consumed. Using the limit as an estimate can overstate the final fee when execution uses less gas."
+      },
+      {
+        "question": "Does this calculate live Ethereum or Layer 2 fees?",
+        "answer": "No. Inputs are manual, and this models Ethereum execution fees only. Blob fees, additional Layer 2 charges and fee-cap behavior are outside the model. The network conditions at execution may differ."
+      }
+    ],
+    "links": [
+      {
+        "title": "Ethereum gas documentation",
+        "url": "https://ethereum.org/developers/docs/gas/"
+      },
+      {
+        "title": "Ethereum gas fees explained",
+        "url": "/read/ethereum-gas-fees-explained"
+      }
+    ]
+  },
+  "staking-rewards": {
+    "title": "Crypto Staking Rewards Calculator: APR Simulator",
+    "description": "Estimate hypothetical staking rewards from token amount, APR and duration. Compare simple and compounded returns with clear assumptions and no live feed.",
+    "answer": "A staking rewards estimate applies an assumed annual percentage rate to a token balance over time. Without compounding, rewards grow with principal, rate and duration. Compounding reinvests hypothetical rewards. This simulator reports token amounts, not guaranteed income or fiat investment profit.",
+    "steps": [
+      "Enter your starting token amount and a hypothetical APR as a percentage.",
+      "Set the number of days and choose no compounding, daily, monthly or yearly compounding.",
+      "Calculate the final token balance and inspect the milestone table. Compare scenarios while keeping fees and protocol-specific risks separate."
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between APR and APY?",
+        "answer": "APR is an annual rate before the effect of compounding. APY reflects compounding over a year under stated assumptions. This tool accepts APR and models your selected compounding frequency rather than treating APR as APY."
+      },
+      {
+        "question": "Are estimated staking rewards guaranteed?",
+        "answer": "No. Actual rewards depend on protocol rules, validator performance, network conditions and fees. Slashing, lockups and token-price changes can also affect the outcome."
+      },
+      {
+        "question": "How does the calculator handle part of a compounding period?",
+        "answer": "It uses a mathematical growth model that interpolates fractional periods, with a 365-day year. A protocol that pays only on discrete dates can produce different rewards."
+      }
+    ],
+    "links": [
+      {
+        "title": "Staking risks and mechanics \u2014 Ethereum.org",
+        "url": "https://ethereum.org/staking/"
+      }
+    ]
+  },
+  "portfolio-allocation": {
+    "title": "Crypto Portfolio Allocation & Rebalance Calculator",
+    "description": "Calculate portfolio weights and the buy or sell adjustments needed to reach your own target allocation. Free crypto rebalancing calculator with manual values.",
+    "answer": "Portfolio allocation is the share of total portfolio value assigned to each asset. Rebalancing compares current values with chosen target percentages and calculates the difference. This tool keeps the portfolio total fixed, so planned purchases are funded by planned sales rather than new deposits.",
+    "steps": [
+      "Add each holding and its current value in one consistent quote currency. Use value, not token quantity.",
+      "Enter your chosen target percentage for each holding. All targets must total 100%.",
+      "Calculate current weights, target values and adjustment amounts. Positive adjustments indicate buys; negative adjustments indicate sells."
+    ],
+    "faq": [
+      {
+        "question": "How do I calculate a crypto portfolio weight?",
+        "answer": "Divide an asset\u2019s current value by the total portfolio value and multiply by 100. For example, a holding worth 700 in a portfolio worth 1,000 has a 70% weight."
+      },
+      {
+        "question": "How is the required rebalance calculated?",
+        "answer": "Multiply total portfolio value by each target percentage, then subtract that asset\u2019s current value. A 60% target in a 1,000 portfolio gives a target value of 600. If the current value is 700, the adjustment is a sale of 100."
+      },
+      {
+        "question": "Does the tool recommend a portfolio allocation?",
+        "answer": "No. You supply the assets and target percentages. It does not assess suitability or account for fees, taxes, minimum order sizes or price changes between trades."
+      }
+    ],
+    "links": [
+      {
+        "title": "Calculate a token\u2019s market cap and FDV",
+        "url": "/tools/market-cap-fdv"
+      },
+      {
+        "title": "Learn about liquidity and execution",
+        "url": "/read/crypto-liquidity-vs-volume"
+      }
+    ]
+  },
+  "token-vesting": {
+    "title": "Token Vesting Calculator: Cliff & Unlock Schedule",
+    "description": "Calculate unlocked and locked tokens from allocation, initial unlock, cliff and duration. View a sample linear vesting schedule with explicit date assumptions.",
+    "answer": "Token vesting describes when an allocation becomes available under a release schedule. This calculator models an optional initial unlock at the start, followed by continuous linear vesting after a cliff. The end date includes the cliff period. It is a planning model and does not read a project\u2019s smart contract.",
+    "steps": [
+      "Enter token allocation, start date, initial unlock percentage and total duration in months.",
+      "Set a cliff shorter than the total duration, then select the date you want to evaluate.",
+      "Calculate unlocked and locked tokens. Review the sample milestone table and compare the stated assumptions with the actual project contract."
+    ],
+    "faq": [
+      {
+        "question": "What happens at the cliff in this vesting calculator?",
+        "answer": "The initial unlock, if any, is available at the start date. The rest does not vest before the cliff. At the cliff it begins vesting continuously, without a catch-up release for the elapsed cliff period."
+      },
+      {
+        "question": "Is the cliff included in the total vesting duration?",
+        "answer": "Yes. A 12-month duration with a three-month cliff ends 12 months after the start. The remaining allocation vests over the nine months after the cliff in this model."
+      },
+      {
+        "question": "Why might a project\u2019s actual token unlock differ?",
+        "answer": "Contracts can use monthly or discrete unlocks, different initial-release rules, catch-up cliffs or timestamps other than UTC midnight. This tool uses UTC dates, actual elapsed time and month-end clamping. Verify the project\u2019s source schedule."
+      }
+    ],
+    "links": [
+      {
+        "title": "Understand circulating supply and FDV",
+        "url": "/read/market-cap-vs-fdv"
+      },
+      {
+        "title": "Explore project launch milestones",
+        "url": "/projects"
+      }
+    ]
+  },
+  "creator-campaign-planner": {
+    "title": "Creator Campaign Pricing & Brand Deal Calculator",
+    "description": "Plan a creator brand-deal quote from deliverables, rates, usage rights and expenses. Estimate commission and payout using your own campaign pricing inputs.",
+    "answer": "A creator campaign quote combines deliverable fees with usage rights, exclusivity and reimbursed production costs. This planner helps crypto creators compare their own pricing scenarios and estimate the payout after agency commission and production expenses. It does not supply market rates or promise brand deals.",
+    "steps": [
+      "Choose a currency, then add each deliverable, quantity and your proposed unit rate.",
+      "Enter a usage-rights uplift, any exclusivity fee, production expenses and agency commission.",
+      "Calculate the total brand quote and estimated creator payout. Confirm the rights scope, fee basis, tax treatment and payment terms in the contract."
+    ],
+    "faq": [
+      {
+        "question": "How does the planner calculate a creator campaign quote?",
+        "answer": "It adds deliverable fees, a percentage usage-rights uplift on those fees, a fixed exclusivity fee and reimbursed production expenses. Each figure comes from your inputs rather than an industry pricing benchmark."
+      },
+      {
+        "question": "How is agency commission applied?",
+        "answer": "Commission applies to deliverable fees plus usage-rights and exclusivity fees. Reimbursed production expenses are excluded from the commission base. Estimated creator payout deducts commission and production expenses from the total brand quote."
+      },
+      {
+        "question": "Can the planner help me get crypto brand deals?",
+        "answer": "It helps prepare a quote, but it does not source or guarantee deals. Creators can apply separately to the Compyvila Creator Network to share their profile and discuss potential brand associations."
+      }
+    ],
+    "links": [
+      {
+        "title": "Apply to the Compyvila Creator Network",
+        "url": "/creator-network"
+      },
+      {
+        "title": "Compyvila media kit",
+        "url": "/media-kit"
+      }
+    ]
+  },
+  "directory": {
+    "title": "Free Crypto Tools & Calculators",
+    "description": "Free crypto calculators for profit, position size, market cap, staking, vesting and portfolio allocation. Exact BTC and ETH converters. No login required.",
+    "answer": "Compyvila\u2019s free crypto tools turn manual inputs into understandable calculations. Estimate trade profit and position size, compare market cap with FDV, convert Bitcoin and Ethereum units exactly, and plan token vesting, portfolio weights or creator campaign quotes. All calculations run in your browser without connecting a wallet.",
+    "steps": [
+      "Choose a calculator or converter for the question you want to answer.",
+      "Replace the example inputs with your own numbers and read the tool\u2019s assumptions.",
+      "Calculate and compare scenarios. Use the linked guides to understand the concepts behind the results."
+    ],
+    "faq": [
+      {
+        "question": "Are these crypto tools free to use?",
+        "answer": "Yes. All eleven tools are free and require no account or wallet connection. They use manual inputs and perform calculations in the browser."
+      },
+      {
+        "question": "Do the tools use live cryptocurrency prices?",
+        "answer": "No. Calculator inputs are manual, even though other parts of Compyvila display market data. Enter consistent, timestamped prices where a calculation needs them."
+      },
+      {
+        "question": "Which tools can I use without a price feed?",
+        "answer": "BTC-to-satoshi and ETH-to-wei conversions use fixed unit relationships. The other calculators use your own price, rate, supply, date or campaign inputs. None requires an external API."
+      }
+    ],
+    "links": [
+      {
+        "title": "Test your knowledge with the Crypto Quiz",
+        "url": "/quiz"
+      },
+      {
+        "title": "Read crypto guides",
+        "url": "/learn"
+      }
+    ]
+  },
+  "quiz": {
+    "title": "Crypto Quiz: Free Cryptocurrency Knowledge Test",
+    "description": "Take a free 10-question crypto quiz on Bitcoin, Ethereum, wallets, gas fees and token fundamentals. Get answer explanations and your score. No login.",
+    "answer": "The Compyvila Crypto Quiz is a free ten-question cryptocurrency knowledge test covering wallet security, Bitcoin units, Ethereum gas, market cap, liquidity, staking and token vesting. Choose one answer per question, read an explanation and receive a score out of ten. No wallet or account is required.",
+    "steps": [
+      "Select an answer to the current question. There is no timer.",
+      "Read the explanation, then select Next question to continue.",
+      "Review your score after ten questions. Restart to practise, or use the linked guides to explore topics in more detail."
+    ],
+    "faq": [
+      {
+        "question": "Is this crypto quiz suitable for beginners?",
+        "answer": "Yes. It covers core cryptocurrency concepts such as wallets, Bitcoin units and transaction fees, alongside introductions to liquidity, staking and vesting. Every question includes an explanation."
+      },
+      {
+        "question": "How is the Crypto Quiz scored?",
+        "answer": "Each correct answer earns one point. There are ten questions, so the final score ranges from zero to ten. A score is a learning check, not a professional qualification."
+      },
+      {
+        "question": "Do I need to connect a wallet or create an account?",
+        "answer": "No. The quiz is free, with no wallet connection, login, seed phrase or payment. Answers and score are held only in the current browser session and clear on refresh."
+      }
+    ],
+    "links": [
+      {
+        "title": "Seed phrases and private keys explained",
+        "url": "/read/seed-phrase-vs-private-key"
+      },
+      {
+        "title": "Understand Ethereum gas fees",
+        "url": "/read/ethereum-gas-fees-explained"
+      },
+      {
+        "title": "Try Free Crypto Tools",
+        "url": "/tools"
+      }
+    ]
+  }
+}
